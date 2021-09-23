@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
@@ -16,6 +16,21 @@
   <!-- My CSS  -->
   <link rel="stylesheet" href="../styles/style.css">
 
+  <!--  Firebase Config  -->
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/8.6.5/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/8.6.5/firebase-auth.js"></script>
+    <script defer src="/__/firebase/8.6.5/firebase-database.js"></script>
+    <script defer src="/__/firebase/8.6.5/firebase-firestore.js"></script>
+    <script defer src="/__/firebase/8.6.5/firebase-functions.js"></script>
+    <script defer src="/__/firebase/8.6.5/firebase-messaging.js"></script>
+    <script defer src="/__/firebase/8.6.5/firebase-storage.js"></script>
+    <script defer src="/__/firebase/8.6.5/firebase-analytics.js"></script>
+    <script defer src="/__/firebase/8.6.5/firebase-remote-config.js"></script>
+    <script defer src="/__/firebase/8.6.5/firebase-performance.js"></script>
+    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+    <!-- end Firebase Config -->
 
   <!-- Page Title  -->
   <title>Hello_World Platform</title>
@@ -37,7 +52,7 @@
         <li><a class="nav-link mr-5" href="../pages/profile.html">Profile</a></li>
         <li><a class="nav-link mr-5" href="../pages/course.html">Courses</a></li>
         <li><a class="nav-link mr-5" href="../pages/tutorials.html">Tutorials</a></li>
-        <li><a class="nav-link active mr-5 " href="../pages/login.html">Login/Register</a></li>  
+        <li><a class="nav-link active mr-5 " href="../pages/login.html">Login/Register</a></li>
       </ul>
     </div>
   </nav>
@@ -49,18 +64,18 @@
   </div >
   <div style="flex-grow:2; margin-left: 1rem">
     <h1 class="h3 mb-3 font-weight-normal" style="text-align: center width:50%">Please sign in</h1>
-    
+
     <label for="inputEmail">Email address</label>
-    
+
     <input id="email" type="email" class="form-control" placeholder="Email address" required autofocus>
 
     <label  for="inputPassword">Password</label>
-    
+
     <input id="password" type="password" class="form-control" placeholder="Password" required>
-    
-    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in <i class="fa fa-sign-in" aria-hidden="true"></i>
+
+    <button class="btn btn-lg btn-primary btn-block" type="submit" onclick="logMeIn()">Sign in <i class="fa fa-sign-in" aria-hidden="true"></i>
     </button>
-    <button class="btn btn-lg btn-secondary btn-block" type="submit">Sign Up <i class="fa fa-sign-in" aria-hidden="true"></i>
+    <button class="btn btn-lg btn-secondary btn-block" type="submit" onclick="signMeUp()">Sign Up <i class="fa fa-sign-in" aria-hidden="true"></i>
     </button>
   </div>
 </form>
@@ -77,5 +92,6 @@
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="../js/app.js"></script>
+<script defer src="../js/login.js"></script>
 </body>
 </html>
