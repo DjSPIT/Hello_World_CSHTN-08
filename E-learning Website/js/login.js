@@ -16,6 +16,7 @@ firebase.auth().onAuthStateChanged((user) => {
         // User is signed in, see docs for a list of available properties
         // https://firebase.google.com/docs/reference/js/firebase.User
         location.href = "index.html";
+
     } else {
         // User is signed out
         // ...
@@ -29,6 +30,8 @@ function logMeIn() {
   username = document.getElementById('email').value;
   password = document.getElementById('password').value;
   firebase.auth().signInWithEmailAndPassword(username, password).then((userCredentials) => {
+    console.log(userCredentials);
+    location.href = "index.html";
    }).catch((error) => {
      window.alert(error.message);
    });
