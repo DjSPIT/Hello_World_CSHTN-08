@@ -39,8 +39,19 @@ function loadTopics() {
 
 /* -------------------------------------------------------------------------- */
 
+document.getElementById("fileB").addEventListener('change', uploadPic);
+
 /* --------------------------Creating a new course--------------------------- */
-function createCourse() {
+var file, fileXtension;
+
+async function uploadPic(ev) {
+  file = ev.target.files[0];
+  console.log(file);
+  let a = file.type.split("/");
+  fileXtension = a[2];
+}
+
+async function createCourse() {
   let courseName = document.getElementById("newCourseName").value.toString();
   let courseAuthor = document.getElementById("authorName").value.toString();
   let courseDesc = document.getElementById("briefDesc").value.toString();
@@ -48,26 +59,51 @@ function createCourse() {
   let courseRef = rtdb.ref("courseData").push();
   let courseID = courseRef.key;
 
-  courseRef.set({
-    name: courseName,
-    author: courseAuthor,
-    description: courseDesc,
-    courseUID: courseID,
-  }).then((res)=>{
-    db.collection("courses").doc(courseId).set({
-      name: courseName,
-      author: courseAuthor,
-      description: courseDesc,
-      courseUID: courseID,
-    }).then((resu)=>{
-      rtdb.ref("courses/"+courseID).set({
-        name: courseName,
-        author: courseAuthor,
-      }).then((resul)=>{
-        location.reload();
-      })
+  const textToBLOB = new Blob([courseDesc], { type: 'text/html' });
+  const sFileName = courseID + '.html';
+
+  const descRef = storage.ref(courseID + "/metadata/" + "description.html");
+
+  var descURL, picURL;
+
+  descRef.put(textToBLOB).then((e)=>{
+    e.ref.getDownloadURL().then((url)=>{
+      descURL = url;
+      storage.ref(courseID + "/metadata/" + "CoursePic." + fileXtension).put(file).then((j)=>{
+        j.ref.getDownloadURL().then((url2)=>{
+          picURL = url2;
+          courseRef.set({
+            name: courseName,
+            author: courseAuthor,
+            description: descURL,
+            courseUID: courseID,
+            image: picURL,
+          }).then((res)=>{
+            console.log("1");
+            db.collection("courses").doc(courseID.toString()).set({
+              name: courseName,
+              author: courseAuthor,
+              description: descURL,
+              courseUID: courseID,
+              image: picURL,
+            }).then(()=>{
+              console.log("2");
+              rtdb.ref("courses/"+courseID).set({
+                name: courseName,
+                author: courseAuthor,
+                description: descURL,
+                courseUID: courseID,
+                image: picURL,
+              }).then((resul)=>{
+                location.reload();
+              });
+            });
+          });
+        });
+      });
     });
   });
+
 
   //db.collection("courses").
 
