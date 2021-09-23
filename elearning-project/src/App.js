@@ -11,8 +11,11 @@ import ContextProvider from './context';
 // Components
 import Header from './components/Header';
 import Home from './components/Home';
-import About from './components/About';
+import Exercises from './components/Exercises';
+import Tutorials from './components/Tutorials';
+import Material from './components/Material';
 import Login from './components/Login';
+import SideNav from './components/SideNav';
 
 //Styles
 import { GlobalStyle } from './GlobalStyle';

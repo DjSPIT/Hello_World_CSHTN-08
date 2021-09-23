@@ -8,7 +8,7 @@ const SideNav = () => {
 	
 	return (
 		<div>
-			Page
+			SideNav
 		</div>
 	);
 };

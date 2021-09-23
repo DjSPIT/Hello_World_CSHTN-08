@@ -4,7 +4,7 @@ import React from 'react';
 import SideNav from './SideNav';
 // Hooks
 
-const Exercises = () => {
+const Material = () => {
 	
 	return (
 		<>
@@ -13,4 +13,4 @@ const Exercises = () => {
 	);
 };
 
-export default Exercises;
+export default Material;
