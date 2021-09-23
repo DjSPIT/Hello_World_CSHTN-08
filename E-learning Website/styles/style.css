@@ -320,3 +320,95 @@ div.materials{
 .content ul{
 	margin-left: 4rem;
 }
+
+.footer{
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background:var(--clr-accent-dark);
+    text-align: center;
+    height:10rem;
+    color: #f4f4f4;
+}
+
+.icons{
+    padding-top: 1rem;
+}
+
+.icons a{
+    text-decoration: none;
+    font-size: 2rem;
+    margin: 0.5rem;
+    color: #f4f4f4;
+}
+
+.company-name{
+    font-size: 1.6rem;
+    margin-top: 0.5rem;
+}
+
+@media (max-width: 500px){
+    html{
+        font-size: 50%;
+    }
+}    
+
+@media(min-width: 501px) and (max-width: 768px){
+    html{
+    font-size: 50%;
+    }
+}  
+
+/* Products */
+
+.products h2{
+	font-family: var(--ff-primary);
+	text-align: center;
+	font-size: 2rem;
+	margin-top: 2rem;
+	margin-bottom: 4rem;
+	color: var(--clr-text);
+}
+
+.products h3{
+	text-align: center;
+	margin-left: 3rem;
+	font-size: 2rem;
+	margin-top: 3rem;
+}
+
+.card-deck{
+	margin: 2rem 2rem;
+}
+
+.card{
+	box-shadow: 0px 3px 65px 0px rgba(0,0,0,0.15);
+  	border-radius:2rem;
+}
+.card img{
+	width: 100%;
+	height: 20rem;
+	padding:2rem 4rem;
+	border-radius:2rem 2rem 0rem 0rem;	
+}
+
+.card-title{
+	font-family: var(--ff-primary);
+}
+
+.card-text{
+	text-align: justify;
+}
+
+.card-body .btn{
+	margin: auto;
+	background-color: var(--clr-accent);
+}
+.card-body .btn:hover{
+	background-color: var(--clr-accent-dark);
+}
+
+.card-body .btn a{
+	color: var(--clr-bg-light);
+	text-decoration: none;
+}
