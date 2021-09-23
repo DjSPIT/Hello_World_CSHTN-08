@@ -38,7 +38,7 @@ async function showHiddenNav() {
   document.getElementById("toLogout").innerHTML = "Logout";
   document.getElementById("toLogout").href = "";
   document.getElementById("toLogout").style.color = "#FF0000";
-  document.getElementById("toLogout").onclick = logMeOut();
+  document.getElementById("toLogout").addEventListener("click", logMeOut);
 }
 
 /* -------------------------------------------------------------------------- */

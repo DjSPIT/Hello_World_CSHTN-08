@@ -17,7 +17,7 @@ firebase.auth().onAuthStateChanged((user) => {
     }
 });
 /* -------------------------------------------------------------------------- */
-
+document.getElementById("signInButton").addEventListener("click", myScript);
 
 async function logMeIn() {
   var usern = document.getElementById("usern").value;
