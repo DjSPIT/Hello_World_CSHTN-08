@@ -30,10 +30,10 @@ img{
 body{
 	margin: 0;
 	height: 100vh;
+	overflow-x:hidden;
 }
 
 h2{
-	text-align: center;
 	font-size: 2rem;
 	font-family: var(--ff-primary);
 }
@@ -50,7 +50,6 @@ footer{
 
 .navbar{
 	box-shadow: 0px 3px 65px 0px rgba(0,0,0,0.15);
-	margin-bottom: 2rem;
 }
 
 .nav-link{
@@ -278,6 +277,13 @@ input{
 .wrapper {
     display: flex;
     width: 100%;
+    position:relative;
+}
+
+#content{
+	position:fixed;
+	z-index:999;
+	background-color:white;
 }
 
 #sidebar {
@@ -286,8 +292,11 @@ input{
     z-index: 999;
     font-size:1.1rem;
     box-shadow: 0px 3px 65px 0px rgba(0,0,0,0.15);
-		color:var(--clr-bg-light);
+	color:var(--clr-bg-light);
     transition: all 0.3s;
+    position: fixed;
+    top:6rem;
+    bottom:10rem;
 }
 
 #sidebar.active {
@@ -322,7 +331,7 @@ a[data-toggle="collapse"] {
 }
 
 #sidebar .sidebar-header {
-    padding: 1.2rem 4rem;
+    padding: 0.3rem 6rem;
     background: var(--clr-accent);
 }
 
@@ -336,7 +345,7 @@ a[data-toggle="collapse"] {
 }
 
 #sidebar ul li a {
-    padding: 10px;
+    padding: 0.9rem;
     font-size: 1.2rem;
     display: block;
     color:var(--clr-accent);
@@ -356,4 +365,27 @@ ul ul a {
     font-size: 0.9em !important;
     padding-left: 30px !important;
     background: var(--clr-accent);
+}
+
+.container-fluid{
+	padding:0;
+
+}
+
+/* Introduction */
+.page-heading{
+	margin:2rem 20rem;
+}
+
+.intro-header{
+	margin: 2rem 0;
+}
+
+.intro-text{
+	margin-bottom:4rem;
+}
+
+.card{
+	width:50rem;
+	margin: 5rem auto;
 }
