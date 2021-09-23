@@ -66,46 +66,38 @@ async function createCourse() {
 
   var descURL, picURL;
 
-  descRef.put(textToBLOB).then((e)=>{
-    e.ref.getDownloadURL().then((url)=>{
-      descURL = url;
-      storage.ref(courseID + "/metadata/" + "CoursePic." + fileXtension).put(file).then((j)=>{
-        j.ref.getDownloadURL().then((url2)=>{
-          picURL = url2;
-          courseRef.set({
+  storage.ref(courseID + "/metadata/" + "CoursePic." + fileXtension).put(file).then((j)=>{
+    j.ref.getDownloadURL().then((url2)=>{
+      picURL = url2;
+      courseRef.set({
+        name: courseName,
+        author: courseAuthor,
+        description: courseDesc,
+        courseUID: courseID,
+        image: picURL,
+      }).then((res)=>{
+        console.log("1");
+        db.collection("courses").doc(courseID.toString()).set({
+          name: courseName,
+          author: courseAuthor,
+          description: courseDesc,
+          courseUID: courseID,
+          image: picURL,
+        }).then(()=>{
+          console.log("2");
+          rtdb.ref("courses/"+courseID).set({
             name: courseName,
             author: courseAuthor,
-            description: descURL,
+            description: courseDesc,
             courseUID: courseID,
             image: picURL,
-          }).then((res)=>{
-            console.log("1");
-            db.collection("courses").doc(courseID.toString()).set({
-              name: courseName,
-              author: courseAuthor,
-              description: descURL,
-              courseUID: courseID,
-              image: picURL,
-            }).then(()=>{
-              console.log("2");
-              rtdb.ref("courses/"+courseID).set({
-                name: courseName,
-                author: courseAuthor,
-                description: descURL,
-                courseUID: courseID,
-                image: picURL,
-              }).then((resul)=>{
-                location.reload();
-              });
-            });
+          }).then((resul)=>{
+            location.reload();
           });
         });
       });
     });
   });
-
-
-  //db.collection("courses").
 
 }
 /* -------------------------------------------------------------------------- */
