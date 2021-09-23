@@ -1,0 +1,170 @@
+/* Base Template */
+
+:root{
+	--clr-text: black;
+
+	--clr-bg-dark: #242424;
+	--clr-bg-light: #fff;
+	--clr-accent: #ff7600;
+	--clr-accent-dark: #dd571c;
+	--clr-grey: #878787;
+
+	--ff-primary: 'Montserrat', sans-serif;
+}
+
+*,
+*::before,
+*::after{
+	box-sizing: border-box;
+}
+
+img{
+	max-width: 100%;
+	width: 12rem;
+	height: 5rem;
+
+}
+
+body{
+	margin: 0;
+	height: 100vh;
+}
+
+h2{
+	text-align: center;
+	font-size: 2rem;
+	font-family: var(--ff-primary);
+}
+
+footer{
+	margin-top: 2em;
+	list-style: none;
+}
+
+
+
+/* Navbar */
+
+
+.navbar{
+	box-shadow: 0px 3px 65px 0px rgba(0,0,0,0.15);
+	margin-bottom: 2rem;
+}
+
+.nav-link{
+	font-family: var(--ff-primary);
+
+}
+
+
+/* Main Content */
+
+.main{
+	background-image: url(../img/background.jpg);
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	height: 80vh;
+}
+
+.main-content{
+	padding-top: 15rem;
+	margin-left: 8rem;
+	margin-right: 5rem;
+}
+
+.main-content h2{
+	color: var(--clr-bg-light);
+	font-size: 3rem;
+	font-weight: 700;
+	font-family: var(--ff-primary);
+}
+
+.main-content span{
+	color: var(--clr-bg-light);
+	font-weight: lighter;
+	font-size: 1.2rem;
+	
+}
+
+.main .btn{
+	background-color: var(--clr-accent);
+	margin-top: 5rem;
+	margin-left: 45rem;
+}
+
+.main .btn:hover{
+	background-color: var(--clr-accent-dark);
+}
+
+.main .btn a{
+	color: var(--clr-bg-light);
+	font-family: var(--ff-primary);
+	text-decoration: none;
+}
+
+
+/* Footer  */
+footer{
+	margin-top: 0 !important;
+}
+.main-footer{
+	background-color: var(--clr-grey);
+}
+
+.main-footer .footer-img{
+	margin-top: 2rem;
+}
+
+.main-footer .footer-items{
+	margin-top: 2rem;
+}
+
+.main-footer .footer-items h5{
+	font-family: var(--ff-primary);
+}
+
+.main-footer .footer-items a{
+	text-decoration: none;
+	color: var(--clr-bg-light);
+}
+
+.main-footer .footer-items a:hover{
+	color: var(--clr-accent);
+}
+
+
+
+
+/* Login Page */
+
+.form-signin {
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: auto;
+}
+.form-signin .checkbox {
+  font-weight: 400;
+}
+.form-signin .form-control {
+  position: relative;
+  box-sizing: border-box;
+  height: auto;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
