@@ -53,23 +53,23 @@ function createCourse() {
     author: courseAuthor,
     description: courseDesc,
     courseUID: courseID,
-  }).then(()=>{
+  }).then((res)=>{
     db.collection("courses").doc(courseId).set({
       name: courseName,
       author: courseAuthor,
       description: courseDesc,
       courseUID: courseID,
-    }).then(()=>{
+    }).then((resu)=>{
       rtdb.ref("courses/"+courseID).set({
         name: courseName,
         author: courseAuthor,
-      }).then(()=>{
+      }).then((resul)=>{
         location.reload();
       })
     });
   });
 
-  db.collection("courses").
+  //db.collection("courses").
 
 }
 /* -------------------------------------------------------------------------- */
