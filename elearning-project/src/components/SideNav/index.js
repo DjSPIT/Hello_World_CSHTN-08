@@ -4,11 +4,13 @@ import React from 'react';
 
 // Hooks
 
-const About = () => {
+const SideNav = () => {
 	
 	return (
-		<div>About Page</div>
+		<div>
+			Page
+		</div>
 	);
 };
 
-export default About;
+export default SideNav;

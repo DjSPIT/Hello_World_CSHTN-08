@@ -22,8 +22,9 @@ const Header = () => (
       <Navbar.Collapse id="navbarScroll">
         <Nav className="mr-auto my-2 my-lg-0" style={{ maxHeight: '100px' }} navbarScroll>
           <Link to='/' ><Nav.Item><Nav.Link href="/">Home</Nav.Link></Nav.Item></Link>
-          <Link to='/about'><Nav.Item><Nav.Link href="/">About</Nav.Link></Nav.Item></Link>
-          <Link to='/courses'><Nav.Item><Nav.Link href="/">My Courses</Nav.Link></Nav.Item></Link>
+          <Link to='/tutorials'><Nav.Item><Nav.Link href="/">Tutorials</Nav.Link></Nav.Item></Link>
+          <Link to='/exercises'><Nav.Item><Nav.Link href="/">Exercises</Nav.Link></Nav.Item></Link>
+          <Link to='/material'><Nav.Item><Nav.Link href="/">Material</Nav.Link></Nav.Item></Link>
           <Link to='/login'><Nav.Item><Nav.Link href="/">Login</Nav.Link></Nav.Item></Link>
         </Nav>
       </Navbar.Collapse>

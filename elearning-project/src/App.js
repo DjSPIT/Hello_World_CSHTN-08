@@ -26,7 +26,9 @@ const App = () => {
       <Header/>
       <Switch>
         <Route path="/" exact component={Home}/>
-        <Route path="/about" component={About}/>
+        <Route path="/tutorials" component={Tutorials}/>
+        <Route path="/exercises" component={Exercises}/>
+        <Route path="/material" component={Material}/>
         <Route path="/login" component={Login}/>
         <GlobalStyle/>
       </Switch>  
