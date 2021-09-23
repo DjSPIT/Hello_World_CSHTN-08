@@ -26,12 +26,12 @@ firebase.auth().onAuthStateChanged((user) => {
 
 
 function logMeIn() {
-  username = document.getElementById('email').value.toString();
-  password = document.getElementById('password').value.toString();
+  username = document.getElementById('email').value;
+  password = document.getElementById('password').value;
   firebase.auth().signInWithEmailAndPassword(username, password).then((userCredentials) => {
    }).catch((error) => {
      window.alert(error.message);
-   })
+   });
 }
 
 function signMeUp() {
