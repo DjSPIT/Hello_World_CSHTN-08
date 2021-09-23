@@ -29,7 +29,7 @@
     <script defer src="/__/firebase/8.6.5/firebase-analytics.js"></script>
     <script defer src="/__/firebase/8.6.5/firebase-remote-config.js"></script>
     <script defer src="/__/firebase/8.6.5/firebase-performance.js"></script>
-    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+    <script defer src="/__/firebase/init.js"></script>
     <!-- end Firebase Config -->
 
   <!-- Page Title  -->
@@ -65,17 +65,17 @@
   <div style="flex-grow:2; margin-left: 1rem">
     <h1 class="h3 mb-3 font-weight-normal" style="text-align: center width:50%">Please sign in</h1>
 
-    <label for="inputEmail">Email address</label>
+    <label >Email address</label>
 
-    <input id="email" type="email" class="form-control" placeholder="Email address" required autofocus>
+    <input id="usern" type="email" class="form-control" placeholder="Username..." required autofocus>
 
-    <label  for="inputPassword">Password</label>
+    <label  >Password</label>
 
-    <input id="password" type="password" class="form-control" placeholder="Password" required>
+    <input id="passwd" type="password" class="form-control" placeholder="Password..." required>
 
-    <button class="btn btn-lg btn-primary btn-block" type="submit" onclick="logMeIn()">Sign in <i class="fa fa-sign-in" aria-hidden="true"></i>
+    <button class="btn btn-lg btn-primary btn-block" onclick='logMeIn();'>Sign in <i class="fa fa-sign-in" aria-hidden="true"></i>
     </button>
-    <button class="btn btn-lg btn-secondary btn-block" type="submit" onclick="signMeUp()">Sign Up <i class="fa fa-sign-in" aria-hidden="true"></i>
+    <button class="btn btn-lg btn-secondary btn-block" onclick="signMeUp();">Sign Up <i class="fa fa-sign-in" aria-hidden="true"></i>
     </button>
   </div>
 </form>
