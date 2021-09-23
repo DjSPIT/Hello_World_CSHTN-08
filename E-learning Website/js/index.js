@@ -23,7 +23,7 @@ firebase.auth().onAuthStateChanged((user) => {
         rtdb = firebase.database();
         auth = firebase.auth();
         storage = firebase.storage();
-
+        showHiddenNav();
     } else {
         // User is signed out
         // ...
@@ -34,8 +34,26 @@ firebase.auth().onAuthStateChanged((user) => {
 
 /* -----------------------------Change Nav Bar------------------------------- */
 
-function showHiddenNav() {
+async function showHiddenNav() {
+  document.getElementById("toLogout").innerHTML = "Logout";
+  document.getElementById("toLogout").href = "";
+  document.getElementById("toLogout").style.color = "#FF0000";
+  document.getElementById("toLogout").onclick = logMeOut();
+}
 
+/* -------------------------------------------------------------------------- */
+
+/* -----------------------------Change Nav Bar------------------------------- */
+
+async function logMeOut() {
+  console.log("logging out");
+    firebase.auth().signOut()
+        .then((ret) => {
+            location.href = "index.html";
+        })
+        .catch((err) => {
+            console.log(err);
+        });
 }
 
 /* -------------------------------------------------------------------------- */
