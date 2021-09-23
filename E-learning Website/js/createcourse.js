@@ -39,6 +39,8 @@ function loadTopics() {
 
 /* -------------------------------------------------------------------------- */
 
+
+
 /* --------------------------Creating a new course--------------------------- */
 function createCourse() {
   let courseName = document.getElementById("newCourseName").value.toString();
@@ -48,26 +50,40 @@ function createCourse() {
   let courseRef = rtdb.ref("courseData").push();
   let courseID = courseRef.key;
 
-  courseRef.set({
-    name: courseName,
-    author: courseAuthor,
-    description: courseDesc,
-    courseUID: courseID,
-  }).then((res)=>{
-    db.collection("courses").doc(courseId).set({
-      name: courseName,
-      author: courseAuthor,
-      description: courseDesc,
-      courseUID: courseID,
-    }).then((resu)=>{
-      rtdb.ref("courses/"+courseID).set({
+  const textToBLOB = new Blob([courseDesc], { type: 'text/html' });
+  const sFileName = courseID + '.html';
+
+  const descRef = storage.ref(courseID + "/metadata/" + "description.html");
+
+  descRef.put(textToBLOB).then((e)=>{
+    e.ref.getDownloadURL().then((url)=>{
+      courseRef.set({
         name: courseName,
         author: courseAuthor,
-      }).then((resul)=>{
-        location.reload();
-      })
+        description: url,
+        courseUID: courseID
+      }).then((res)=>{
+        console.log("1");
+        db.collection("courses").doc(courseID.toString()).set({
+          name: courseName,
+          author: courseAuthor,
+          description: url,
+          courseUID: courseID
+        }).then(()=>{
+          console.log("2");
+          rtdb.ref("courses/"+courseID).set({
+            name: courseName,
+            author: courseAuthor,
+            description: url,
+            courseUID: courseID
+          }).then((resul)=>{
+            location.reload();
+          });
+        });
+      });
     });
   });
+
 
   //db.collection("courses").
 
