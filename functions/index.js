@@ -1,5 +1,5 @@
 const functions = require("firebase-functions");
-
+const admin = require("firebase-admin");
 // // Create and Deploy Your First Cloud Functions
 // // https://firebase.google.com/docs/functions/write-firebase-functions
 //
@@ -7,6 +7,19 @@ const functions = require("firebase-functions");
 //   functions.logger.info("Hello logs!", {structuredData: true});
 //   response.send("Hello from Firebase!");
 // });
+
+/* *************************** Initializations ****************************** */
+admin.initializeApp();
+/* ************************************************************************** */
+
+
+/* *************************** Global Constants ***************************** */
+
+const db = admin.firestore();
+// const rtdb = admin.database();
+// const auth = admin.auth();
+
+/* ************************************************************************** */
 
 /* ______________________________By @Enculandus______________________________ */
 /* __________________________________________________________________________ */
