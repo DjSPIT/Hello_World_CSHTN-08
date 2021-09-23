@@ -221,14 +221,16 @@ input{
 	background-color: var(--clr-accent-dark);
 }
 
-
 /* Login Page */
 
 .form-signin {
   width: 100%;
-  max-width: 330px;
+  max-width: 850px;
   padding: 15px;
   margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 .form-signin .checkbox {
   font-weight: 400;
