@@ -1,28 +1,28 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
-	background:var(--darkGrey);
-	padding: 0 20px;
-`;
-
-export const Content = styled.div`
-	display: flex;
-	align-items:center;
-	justify-content: space-between;
-	max-width: var(--maxWidth);
-	padding: 20px 0;
-	margin: 0 auto; 
-	color: var(--white);
-
-	a{
-		color:var(--white);
-		text-decoration:none;
+	.navbar {
+		color:#bbb;
 	}
 
-	a:hover{
-		color:var(--medGrey);
+	.navbar-brand, .navbar-nav, .nav-link{
+		margin:0 4.5rem;
+		justify-content: space-between;
+		font-size:1.3rem;
+
+		a{
+			color: var(--white) !important;
+			text-decoration:none;
+
+		}
+
+		&:hover{
+			color:#eee !important;
+		}
+
 	}
 `;
+
 
 export const LogoImg = styled.img`
 	width:200px;

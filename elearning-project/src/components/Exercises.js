@@ -1,17 +1,16 @@
 import React from 'react';
 
 // Components to be imported
-import Hero from './Hero';
 
 // Hooks
 
-const Home = () => {
+const Exercises = () => {
 	
 	return (
 		<>
-		<Hero />
+			<SideNav/>
 		</>
 	);
 };
 
-export default Home;
+export default Exercises;

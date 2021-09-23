@@ -2,12 +2,17 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 // Routing
-// import { BrowserRouter as Bw, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Bw, Routes, Route, Link , Switch} from "react-router-dom";
 
+
+// Context
+import ContextProvider from './context';
 
 // Components
 import Header from './components/Header';
 import Home from './components/Home';
+import About from './components/About';
+import Login from './components/Login';
 
 //Styles
 import { GlobalStyle } from './GlobalStyle';
@@ -16,11 +21,19 @@ import { GlobalStyle } from './GlobalStyle';
 const App = () => {
 
   return(
-    <div className="App">
+    <Bw>
+    <ContextProvider>
       <Header/>
-      Start here...
-      <GlobalStyle/>
-    </div> 
+      <Switch>
+        <Route path="/" exact component={Home}/>
+        <Route path="/tutorials" component={Tutorials}/>
+        <Route path="/exercises" component={Exercises}/>
+        <Route path="/material" component={Material}/>
+        <Route path="/login" component={Login}/>
+        <GlobalStyle/>
+      </Switch>  
+    </ContextProvider>
+    </Bw> 
   );
 }
 
