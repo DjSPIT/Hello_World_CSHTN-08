@@ -23,7 +23,7 @@ async function logMeIn() {
   console.log("started");
 
   let usern = document.getElementById("usern").value.toString();
-  let passwd = document.getElementById("passwd").value.toString(); 
+  let passwd = document.getElementById("passwd").value.toString();
   console.log("1");
   firebase.auth().signInWithEmailAndPassword(usern,passwd).then((userCredentials) => {
     console.log("DONE");
@@ -34,8 +34,8 @@ async function logMeIn() {
 }
 
 async function signMeUp() {
-  let usern = document.getElementById('email').value;
-  let passwd = document.getElementById('password').value;
+  let usern = document.getElementById("usern").value.toString();
+  let passwd = document.getElementById("passwd").value.toString(); 
   firebase.auth().createUserWithEmailAndPassword(username,password).then((userCredential) => {
     //do nothing
   })
