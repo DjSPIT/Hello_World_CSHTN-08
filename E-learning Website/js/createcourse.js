@@ -79,6 +79,14 @@ async function loadContent() {
     document.getElementById("contentMod").innerHTML = mydata.content;
   })
 }
+
+async function modifyContent() {
+  courseIDforMod = document.getElementById("courseIdMod").value;
+  subtopicIDforMOD = document.getElementById("subtopicMod").value;
+  // rtdb.ref("courseData/" + courseIDforMod + "/courseContent/" + subtopicIDforMOD).update({
+  //
+  // });
+}
 /* -------------------------------------------------------------------------- */
 
 /* --------------------------Creating a new Content-------------------------- */
