@@ -52,7 +52,7 @@ async function displayDetails() {
 async function updateDetails() {
     let pname = document.getElementById("profname").value;
     let pabout = document.getElementById("profabout").value;
-    auth.updateProfile({
+    auth.currentUser.updateProfile({
       displayName: pname,
     }).then(()=>{
       db.collection("users").doc(auth.currentUser.uid).update({
