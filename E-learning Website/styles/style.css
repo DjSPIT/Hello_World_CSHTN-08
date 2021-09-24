@@ -8,6 +8,8 @@
 	--clr-accent: #ff7600;
 	--clr-accent-dark: #dd571c;
 	--clr-grey: #878787;
+	--clr-blue-dark: #293039;
+	--clr-blue-light: #A9D8D3;
 
 	--ff-primary: 'Montserrat', sans-serif;
 }
@@ -118,7 +120,7 @@ footer{
 }
 
 .footer .icons{
-	
+
 }
 
 
