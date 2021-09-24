@@ -65,11 +65,9 @@ async function updateDetails() {
       })
     });
 }
-
 /* -------------------------------------------------------------------------- */
 
 /* -----------------------------Change Nav Bar------------------------------- */
-
 async function showHiddenNav() {
   document.getElementById("toLogout").innerHTML = "Logout";
   document.getElementById("toLogout").href = "";
@@ -77,11 +75,9 @@ async function showHiddenNav() {
   document.getElementById("toLogout").onclick = "logMeOut(); return false;";
   //document.getElementById("toLogout").addEventListener("click", logMeOut);
 }
-
 /* -------------------------------------------------------------------------- */
 
 /* --------------------------------Logging Out------------------------------- */
-
 async function logMeOut() {
   console.log("logging out");
     firebase.auth().signOut()
@@ -92,5 +88,4 @@ async function logMeOut() {
             console.log(err);
         });
 }
-
 /* -------------------------------------------------------------------------- */
