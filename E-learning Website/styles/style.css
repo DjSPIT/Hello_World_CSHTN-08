@@ -11,6 +11,7 @@
 	--clr-blue-dark: #293039;
 	--clr-orange-light:#f06529;
 	--clr-orange-dark:#e34c26;
+	--clr-baby-blue:#89cff0;
 	--ff-primary: 'Montserrat', sans-serif;
 }
 
@@ -46,6 +47,7 @@ h2{
 
 .navbar{
 	box-shadow: 0px 3px 65px 0px rgba(0,0,0,0.15);
+	background-color:var(--clr-bg-light);
 }
 
 .nav-link{
@@ -127,9 +129,10 @@ h2{
 
 .form-signin {
   width: 100%;
-  max-width: 850px;
+  margin-top:10rem;
+  margin-bottom:4rem;
+  max-width: 52rem;
   padding: 15px;
-  margin: auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -194,12 +197,19 @@ div.content {
 
 }
 
-div.materials{
+div.my-repo{
 	margin: 3rem 15rem;
   	padding: 2rem 2rem;
   	box-shadow: 0px 3px 35px 0px rgba(0,0,0,0.15);
   	border-radius:1rem;
 
+}
+
+div.public-repo{
+		margin: 3rem 15rem;
+  	padding: 2rem 2rem;
+  	box-shadow: 0px 3px 35px 0px rgba(0,0,0,0.15);
+  	border-radius:1rem;
 }
 
 @media screen and (max-width: 700px) {
@@ -337,7 +347,7 @@ td{
 }
 
 .profileCard{
-	margin:2rem 8rem;
+	margin:8rem 10rem;
 	box-shadow: 0px 3px 65px 0px rgba(0,0,0,0.15);
 	padding: 2rem 4rem;
 }
@@ -351,11 +361,26 @@ td{
 }
 
 .btn-primary{
-	background-color:var(--clr-blue-dark) !important;
+	background-color:var(--clr-accent);
 	margin:0 6rem;
 	border:none
 }
 
+
 #updatedetails{
 	margin:0;
+}
+
+
+.dropdown{
+	margin-right:2rem;
+}
+
+.dropdown-menu{
+	min-width:8rem;
+
+}
+
+.dropdown-item{
+	color:var(--clr-accent);
 }

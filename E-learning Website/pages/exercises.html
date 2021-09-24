@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
@@ -16,27 +16,13 @@
   <!-- My CSS  -->
   <link rel="stylesheet" href="../styles/style.css">
 
-  <!--  Firebase Config  -->
-    <!-- update the version number as needed -->
-    <script defer src="/__/firebase/8.6.5/firebase-app.js"></script>
-    <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/8.6.5/firebase-auth.js"></script>
-    <script defer src="/__/firebase/8.6.5/firebase-database.js"></script>
-    <script defer src="/__/firebase/8.6.5/firebase-firestore.js"></script>
-    <script defer src="/__/firebase/8.6.5/firebase-functions.js"></script>
-    <script defer src="/__/firebase/8.6.5/firebase-messaging.js"></script>
-    <script defer src="/__/firebase/8.6.5/firebase-storage.js"></script>
-    <script defer src="/__/firebase/8.6.5/firebase-analytics.js"></script>
-    <script defer src="/__/firebase/8.6.5/firebase-remote-config.js"></script>
-    <script defer src="/__/firebase/8.6.5/firebase-performance.js"></script>
-    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
-    <!-- end Firebase Config -->
 
   <!-- Page Title  -->
   <title>Hello_World Platform</title>
 </head>
 
 <body>
+
 
  <!-- Navigation Bar -->
  <nav class="navbar navbar-expand-lg navbar-light  fixed-top">
@@ -83,83 +69,6 @@
 </div>
 </nav>
 
-<!-- Profile Card -->
-  <h3 class="profileheader "> Your Profile </h3>
-
-  <div style="min-width:80%" class="card mb-3 profileCard">
-    <div class="row no-gutters">
-    <div class="col-md-7">
-      <div class="card-body">
-      <h4 class="card-header" id="profilename">PName</h4>
-      <table class="card-text">
-        <tr>
-          <th >
-            Login Id
-          </th>
-          <td id = "loginId">
-            Jd12245
-          </td>
-          <td>
-          </td>
-        </tr>
-        <!-- <tr>
-          <th id = "password" >
-            Password
-          </th>
-          <td >
-            Jd12244595
-          </td>
-        </tr> -->
-        <tr>
-          <th >
-            About Me
-          </th>
-          <td id = "aboutMe">
-            I am a giant frog who is friends with no one but everyone. Who am I ? WTH ?? WHY ? Too Many Questions.
-          </td>
-        </tr>
-      </table>
-      </div>
-    </div>
-
-    <div class="col-md-5 profileimg">
-      <img style="padding:0;" src="../img/person3.jpg" class="profilePic">
-    </div>
-
-    <div>
-      <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Edit Details</button>
-    </div>
-    </div>
-  </div>
-
-  <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Enter your details</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-       <div>
-    <form class="profileEditF">
-      <p>Enter Your Name</p>
-      <input type="text" id="profname"></input>
-      <p>Enter Your About Me</p>
-      <input type="text" id="profabout"></input>
-
-    </form>
-  </div>
-      </div>
-      <div class="modal-footer">
-    <button class="btn btn-primary" id="updatedetails" onclick="updateDetails()">Submit</button>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
 
 
 <!-- Footer -->
@@ -175,9 +84,41 @@
         </div>
     </footer>
 
-  <!-- Javascript CDN -->
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script defer src="../js/updateprofile.js"></script>
+<!-- Javascript CDN -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../js/app.js"></script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
