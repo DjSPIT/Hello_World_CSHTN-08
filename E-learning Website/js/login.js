@@ -20,6 +20,7 @@ firebase.auth().onAuthStateChanged((user) => {
 //document.getElementById("signInButton").addEventListener("click", myScript);
 
 async function logMeIn() {
+  console.log("started");
   var usern = document.getElementById("usern").value;
   var passwd = document.getElementById("passwd").value;
   firebase.auth().signInWithEmailAndPassword(usern,passwd).then((userCredentials) => {
