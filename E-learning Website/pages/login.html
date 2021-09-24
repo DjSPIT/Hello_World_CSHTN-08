@@ -39,28 +39,55 @@
 <body>
 
 
+ <!-- Navigation Bar -->
+ <nav class="navbar navbar-expand-lg navbar-light  fixed-top">
+  <a href="../pages/index.html"><img src="../img/logo.png" alt="logo" class="logo ml-5"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup ">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"      aria-expanded="false">
+          Courses
+        </a>
+        <div class="dropdown-menu" id="dropdownmenu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="../pages/course.html#intro">HTML</a>
+          <a class="dropdown-item" href="#">CSS</a>
+          <a class="dropdown-item" href="#">JavaScript</a>
+          <a class="dropdown-item" href="#">NodeJS</a>
+          <a class="dropdown-item" href="#">ReactJS</a>
+          <a class="dropdown-item" href="#">MongoDB</a>
+          <a class="dropdown-item" href="#">MySQL</a>
+        </div>
+      </li>
 
-  <!-- Navigation Bar -->
-  <nav class="navbar navbar-expand-lg navbar-light">
-    <a href="../pages/index.html"><img src="../img/logo.png" alt="logo" class="logo ml-5"></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <ul class="navbar-nav ml-auto">
-        <li><a class="nav-link mr-5" href="index.html">Home</a></li>
-        <li><a class="nav-link mr-5" href="../pages/profile.html">Profile</a></li>
-        <li><a class="nav-link mr-5" href="../pages/course.html">Courses</a></li>
-        <li><a class="nav-link mr-5" href="../pages/tutorials.html">Tutorials</a></li>
-        <li><a class="nav-link active mr-5 " href="../pages/login.html">Login/Register</a></li>
-      </ul>
-    </div>
-  </nav>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"      aria-expanded="false">
+          Exercises
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="../pages/exercises.html">HTML Quiz</a>
+          <a class="dropdown-item" href="#">CSS Quiz</a>
+          <a class="dropdown-item" href="#">JavaScript Quiz</a>
+          <a class="dropdown-item" href="#">NodeJS Quiz</a>
+          <a class="dropdown-item" href="#">ReactJS Quiz</a>
+          <a class="dropdown-item" href="#">MongoDB Quiz</a>
+          <a class="dropdown-item" href="#">MySQL Quiz</a>
+        </div>
+      </li>
+
+    </li>
+    <li><a class="nav-link mr-5" href="../pages/profile.html">Profile</a></li>
+    <li><a id="toLogout" class="nav-link mr-5 " href="../pages/login.html">Login/Register</a></li>
+  </ul>
+</div>
+</nav>
 
 <!-- Login Form -->
-<form id="login-form" class="form-signin" style="margin-top: 3rem; margin-bottom: 3rem;">
+<form id="login-form" class="form-signin" style="margin-top: 10rem; margin-bottom: 3rem;margin-left:10rem">
   <div style="flex-direction:row">
-    <img class="mb-4" src="../img/login.svg" alt="" style="width: 24rem; height: 20rem;">
+    <img class="mb-4" src="../img/login.png" alt="" style="width: 26rem; height: 24rem;">
   </div >
   <div style="flex-grow:2; margin-left: 2rem; margin-bottom:4rem;">
     <h1 class="h3 mb-3 font-weight-normal" style="text-align: center width:50%">Please sign in</h1>
