@@ -62,7 +62,7 @@
   <div style="flex-direction:row">
     <img class="mb-4" src="../img/login.svg" alt="" style="width: 24rem; height: 20rem;">
   </div >
-  <div style="flex-grow:2; margin-left: 1rem">
+  <div style="flex-grow:2; margin-left: 2rem; margin-bottom:4rem;">
     <h1 class="h3 mb-3 font-weight-normal" style="text-align: center width:50%">Please sign in</h1>
 
     <label >Email address</label>
@@ -73,9 +73,11 @@
 
     <input id="passwd" type="password" class="form-control" placeholder="Password..." required>
 
-    <button id="singInButton" class="btn btn-lg btn-primary btn-block" onclick="logMeIn()">Sign In <i class="fa fa-sign-in" aria-hidden="true"></i>
+    <button style="margin:0;" id="singInButton" class="btn btn-lg btn-primary btn-block" onclick="logMeIn()">Sign In <i class="fa fa-sign-in" aria-hidden="true"></i>
     </button>
     <button class="btn btn-lg btn-secondary btn-block" onclick="signMeUp();">Sign Up <i class="fa fa-sign-in" aria-hidden="true"></i>
+    </button>
+    <button class="btn btn-lg btn-danger btn-block">Sign In with Google <i class="fa fa-google" aria-hidden="true"></i>
     </button>
   </div>
 </form>
