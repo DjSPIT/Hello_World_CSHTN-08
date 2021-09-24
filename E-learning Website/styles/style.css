@@ -381,7 +381,7 @@ div.materials{
 	margin: 2rem 2rem;
 }
 .card-deck .card{
-	
+
   margin-bottom:2rem;
 }
 
@@ -504,9 +504,46 @@ div.materials{
   top: calc(50% - 3px);
 }
 
-.profile-tab {
-	display: flex;  
-	margin: 3rem;
-	padding: 1rem; 
-	align:center; 
+
+* Profile Page*/
+table{
+	margin: 1rem 0.2rem;
+}
+td{
+	padding:0.5rem;
+}
+.profileheader{
+	text-align:center;
+}
+
+.profileimg{
+	border-radius:2rem;	
+}
+
+.profileimg img{
+	width:100%;
+	border:1px solid var(--clr-accent);
+	border-radius:2rem;
+}
+
+.profileCard{
+	margin:2rem 8rem;
+	box-shadow: 0px 3px 65px 0px rgba(0,0,0,0.15);
+	padding: 2rem 4rem;
+} 
+.profileEditF{
+	margin:0rem 1rem;
+
+}
+
+.profileEditF p{
+	margin: 0.5rem 0;
+}
+
+.btn-primary{
+	margin:0 6rem;
+}
+
+#updatedetails{
+	margin:0;
 }
