@@ -26,6 +26,7 @@ firebase.auth().onAuthStateChanged((user) => {
         showHiddenNav();
         getParams();
     } else {
+      getParams();
         // User is signed out
         // ...
         //location.href = "index.html";
