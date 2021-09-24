@@ -24,7 +24,7 @@ firebase.auth().onAuthStateChanged((user) => {
         auth = firebase.auth();
         storage = firebase.storage();
         showHiddenNav();
-        loadCourses();
+        getParams();
     } else {
         // User is signed out
         // ...
@@ -88,7 +88,7 @@ async function loadCourseData(theUID) {
             const opt = "<a class=\"active\" onclick=\"loadArticle(" + element+ "," + theUID + ")\">" + dat.articleTitles[i] + "</a>"
             let dom = new DOMParser().parseFromString(opt,'text/html');
             let opt_element = dom.body.firstElementChild;
-            document.getElementById('subtopics').append(opt_element);
+            document.getElementById('theSidebar').append(opt_element);
           });
       } else {
           // doc.data() will be undefined in this case
