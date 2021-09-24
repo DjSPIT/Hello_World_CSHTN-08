@@ -20,13 +20,9 @@ firebase.auth().onAuthStateChanged((user) => {
 //document.getElementById("signInButton").addEventListener("click", myScript);
 
 async function logMeIn() {
-  console.log("started");
-
   let usern = document.getElementById("usern").value.toString();
   let passwd = document.getElementById("passwd").value.toString();
-  console.log("1");
   firebase.auth().signInWithEmailAndPassword(usern,passwd).then((userCredentials) => {
-    console.log("DONE");
     //location.href = "index.html";
    }).catch((error) => {
      window.alert(error.message);
@@ -35,7 +31,7 @@ async function logMeIn() {
 
 async function signMeUp() {
   let usern = document.getElementById("usern").value.toString();
-  let passwd = document.getElementById("passwd").value.toString(); 
+  let passwd = document.getElementById("passwd").value.toString();
   firebase.auth().createUserWithEmailAndPassword(username,password).then((userCredential) => {
     //do nothing
   })

@@ -62,7 +62,7 @@ async function logMeOut() {
 
 /* -------------------------------------------------------------------------- */
 
-/* --------------------------------Logging Out------------------------------- */
+/* --------------------------------Load Courses------------------------------ */
 
 async function loadCourses(){
   firebase.database().ref("courses/").once('value',(snapshot)=>{

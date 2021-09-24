@@ -23,6 +23,7 @@ firebase.auth().onAuthStateChanged((user) => {
         rtdb = firebase.database();
         auth = firebase.auth();
         storage = firebase.storage();
+        showHiddenNav();
         displayDetails();
     } else {
         // User is signed out
@@ -63,6 +64,33 @@ async function updateDetails() {
         location.reload();
       })
     });
+}
+
+/* -------------------------------------------------------------------------- */
+
+/* -----------------------------Change Nav Bar------------------------------- */
+
+async function showHiddenNav() {
+  document.getElementById("toLogout").innerHTML = "Logout";
+  document.getElementById("toLogout").href = "";
+  document.getElementById("toLogout").style.color = "#FF0000";
+  document.getElementById("toLogout").onclick = "logMeOut(); return false;";
+  //document.getElementById("toLogout").addEventListener("click", logMeOut);
+}
+
+/* -------------------------------------------------------------------------- */
+
+/* --------------------------------Logging Out------------------------------- */
+
+async function logMeOut() {
+  console.log("logging out");
+    firebase.auth().signOut()
+        .then((ret) => {
+            location.href = "index.html";
+        })
+        .catch((err) => {
+            console.log(err);
+        });
 }
 
 /* -------------------------------------------------------------------------- */
