@@ -32,7 +32,7 @@ firebase.auth().onAuthStateChanged((user) => {
 });
 /* -------------------------------------------------------------------------- */
 
-/* ------------------------Loading Available Courses-------------------------- */
+/* -----------------------Loading Available Courses-------------------------- */
 
 async function loadCourses() {
   rtdb.ref("/courses").once('value',(snap)=>{
@@ -45,6 +45,9 @@ async function loadCourses() {
     });
   });
 }
+/* -------------------------------------------------------------------------- */
+
+/* ----------------------Modifying Available Courses------------------------- */
 
 async function loadTopics() {
   let courseID = document.getElementById("courseIdMod").value.toString();

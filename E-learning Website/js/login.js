@@ -32,7 +32,7 @@ async function logMeIn() {
 async function signMeUp() {
   let usern = document.getElementById("usern").value.toString();
   let passwd = document.getElementById("passwd").value.toString();
-  firebase.auth().createUserWithEmailAndPassword(username,password).then((userCredential) => {
+  firebase.auth().createUserWithEmailAndPassword(usern,passwd).then((userCredential) => {
     //do nothing
   })
   .catch((error) => {
