@@ -184,6 +184,39 @@ async function createCourse() {
 }
 /* -------------------------------------------------------------------------- */
 
+/* --------------------------Creating a new Quiz--------------------------- */
+async function createQuiz() {
+  let quizCourseID = document.getElementById("quizCourseID").value;
+  let quizQuestion = document.getElementById("quizQuestion").value;
+  let quizOP1 = document.getElementById("quizOP1").value;
+  let quizOP2 = document.getElementById("quizOP2").value;
+  let quizOP3 = document.getElementById("quizOP3").value;
+  let quizOP4 = document.getElementById("quizOP4").value;
+  let quizAns = document.getElementById("quizAnswer").value;
+
+  if(quizQuestion == "" || quizOP1 == "" || quizOP2 == "" || quizAns == ""){
+    return window.alert("Empty question or first option or second option");
+  }
+
+  let quizRef = rtdb.ref("courseData/" + quizCourseID + "/courseQuiz").push();
+  let quizID = contentRef.key;
+
+  quizRef.set({
+    quizUID: quizID,
+    question: quizQuestion,
+    options: [quizOP1, quizOP2, quizOP3, quizOP4]
+  }).then(()=>{
+    db.collection("courses").doc(quizCourseID).collection("quizes").doc(quizID).update({
+      quizUID: quizID,
+      answer: quizAns
+    }).then(()=>{
+      location.reload();
+    })
+  });
+
+}
+
+/* -------------------------------------------------------------------------- */
 
 /* __________________________________________________________________________ */
 /* __________________________________________________________________________ */
