@@ -16,6 +16,22 @@
   <!-- My CSS  -->
   <link rel="stylesheet" href="../styles/style.css">
 
+  <!--  Firebase Config  -->
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/8.6.5/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/8.6.5/firebase-auth.js"></script>
+    <script defer src="/__/firebase/8.6.5/firebase-database.js"></script>
+    <script defer src="/__/firebase/8.6.5/firebase-firestore.js"></script>
+    <script defer src="/__/firebase/8.6.5/firebase-functions.js"></script>
+    <script defer src="/__/firebase/8.6.5/firebase-messaging.js"></script>
+    <script defer src="/__/firebase/8.6.5/firebase-storage.js"></script>
+    <script defer src="/__/firebase/8.6.5/firebase-analytics.js"></script>
+    <script defer src="/__/firebase/8.6.5/firebase-remote-config.js"></script>
+    <script defer src="/__/firebase/8.6.5/firebase-performance.js"></script>
+    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+    <!-- end Firebase Config -->
+
   <!-- Page Title  -->
   <title>Hello_World Platform</title>
 </head>
@@ -34,14 +50,14 @@
         <li><a class="nav-link active mr-5" href="../pages/profile.html">Profile</a></li>
         <li><a class="nav-link mr-5" href="../pages/course.html">Courses</a></li>
         <li><a class="nav-link mr-5" href="../pages/tutorials.html">Tutorials</a></li>
-        <li><a class="nav-link mr-5 " href="../pages/login.html">Login/Register</a></li>  
+        <li><a class="nav-link mr-5 " href="../pages/login.html">Login/Register</a></li>
       </ul>
     </div>
   </nav>
 
 <!-- Profile Card -->
   <h3 class="profileheader "> Your Profile </h3>
-  
+
   <div style="min-width:80%" class="card mb-3 profileCard">
     <div class="row no-gutters">
     <div class="col-md-7">
@@ -77,17 +93,17 @@
       </table>
       </div>
     </div>
-    
+
     <div class="col-md-5 profileimg">
       <img style="padding:0;" src="../img/person3.jpg" class="profilePic">
     </div>
-    
+
     <div>
       <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Edit Details</button>
     </div>
     </div>
   </div>
-  
+
   <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -105,12 +121,12 @@
       <input type="text" id="profname"></input>
       <p>Enter Your About Me</p>
       <input type="text" id="profabout"></input>
-      
+
     </form>
   </div>
       </div>
       <div class="modal-footer">
-    <button class="btn btn-primary" id="updatedetails" onclick="updateDetails()">Submit</button>  
+    <button class="btn btn-primary" id="updatedetails" onclick="updateDetails()">Submit</button>
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
       </div>
     </div>
@@ -134,6 +150,6 @@
   <!-- Javascript CDN -->
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="../js/updateprofile.js"></script>
+  <script defer src="../js/updateprofile.js"></script>
 </body>
 </html>

@@ -23,7 +23,6 @@ firebase.auth().onAuthStateChanged((user) => {
         rtdb = firebase.database();
         auth = firebase.auth();
         storage = firebase.storage();
-        showHiddenNav();
     } else {
         // User is signed out
         // ...
@@ -37,7 +36,7 @@ async function updateDetails() {
     let pname = document.getElementById("profname").value;
     let pabout = document.getElementById("profabout").value;
     db.collection(users).doc(auth.currentUser.uid).update({
-        name:pname;
-        about:pabout;
-    })
+        name:pname,
+        about:pabout,
+    });
 }
