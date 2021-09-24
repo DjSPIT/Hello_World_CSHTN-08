@@ -83,9 +83,9 @@ async function loadContent() {
 async function modifyContent() {
   courseIDforMod = document.getElementById("courseIdMod").value;
   subtopicIDforMOD = document.getElementById("subtopicMod").value;
-  // rtdb.ref("courseData/" + courseIDforMod + "/courseContent/" + subtopicIDforMOD).update({
-  //
-  // });
+  rtdb.ref("courseData/" + courseIDforMod + "/courseContent/" + subtopicIDforMOD).update({
+    content: document.getElementById("contentMod").value,
+  });
 }
 /* -------------------------------------------------------------------------- */
 
