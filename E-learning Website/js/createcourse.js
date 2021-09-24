@@ -53,13 +53,12 @@ async function loadTopics() {
     if (doc.exists) {
         console.log("Document data:", doc.data());
         let dat = doc.data();
-        dat..forEach((element) => {
-          const opt = "<option name=\"" + element.contentTitle + "\" value\"" + element.contentName + "\">"
+        dat.articlesIDs.forEach((element,i) => {
+          const opt = "<option name=\"" + dat.articleTitles[i] + "\" value\"" + element + "\">"
           let dom = new DOMParser().parseFromString(opt,'text/html');
           let opt_element = dom.body.firstElementChild;
           document.getElementById('courses').append(opt_element);
         });
-
     } else {
         // doc.data() will be undefined in this case
         console.log("No such document!");
