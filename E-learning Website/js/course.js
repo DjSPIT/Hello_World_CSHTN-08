@@ -64,7 +64,7 @@ async function logMeOut() {
 
 
 
-/* --------------------------------Load Courses------------------------------ */
+/* --------------------------------Load Course------------------------------- */
 let paramString = urlString.split('?')[1];
 let queryString = new URLSearchParams(paramString);
 /* -------------------------------------------------------------------------- */
