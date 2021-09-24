@@ -199,7 +199,7 @@ async function createQuiz() {
   }
 
   let quizRef = rtdb.ref("courseData/" + quizCourseID + "/courseQuiz").push();
-  let quizID = contentRef.key;
+  let quizID = quizRef.key;
 
   quizRef.set({
     quizUID: quizID,
