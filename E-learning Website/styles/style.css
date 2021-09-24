@@ -23,10 +23,10 @@
 	padding:0;
 }
 
-img{
-	max-width: 100%;
-	width: 8rem;
-	height: 5rem;
+.logo {
+	max-width: 100% ;
+	width: 6rem;
+	height: 5rem ;
 
 }
 
@@ -383,4 +383,77 @@ td{
 
 .dropdown-item{
 	color:var(--clr-accent);
+}
+
+.roadmap img{
+	width:78%;
+	display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.roadmap-head{
+	margin-top:2rem;
+	text-align:center;
+}
+
+.box-transparent1 {
+position: absolute;
+top: 40rem !important;
+left: 10rem;
+background-color: rgba(100, 100, 100, 0.01);
+padding: 20px;
+width: 75rem;
+height: 30rem;
+}
+
+.box-transparent2 {
+position: absolute;
+top: 70rem !important;
+left: 10rem;
+background-color: rgba(100, 100, 100, 0.01);
+padding: 20px;
+width: 75rem;
+height: 28rem;
+}
+
+
+.box-transparent3 {
+position: absolute;
+top: 99rem !important;
+left: 10rem;
+background-color: rgba(100, 100, 100, 0.01);
+padding: 20px;
+width: 75rem;
+height: 24rem;
+}
+
+.box-transparent4 {
+position: absolute;
+top: 124rem;
+left: 10rem;
+background-color: rgba(100, 100, 100, 0.01);
+padding: 20px;
+width: 75rem;
+height: 24rem;
+}
+
+.box-transparent5 {
+position: absolute;
+top: 147rem;
+left: 10rem;
+background-color: rgba(100, 100, 100, 0.01);
+padding: 20px;
+width: 75rem;
+height: 26rem;
+}
+
+.box-transparent6 {
+position: absolute;
+top: 173rem;
+left: 10rem;
+background-color: rgba(100, 100, 100, 0.01);
+padding: 20px;
+width: 75rem;
+height: 28rem;
 }
