@@ -38,7 +38,7 @@ async function loadCourses() {
   rtdb.ref("/courses").once('value',(snap)=>{
     snap.forEach((childSnap) => {
       let dat = childSnap.val();
-      const opt = "<option name=\""+ dat.name + "\" value=\"" + dat.courseID + "\">" + dat.name + "</option>";
+      const opt = "<option name=\""+ dat.name + "\" value=\"" + dat.courseUID + "\">" + dat.name + "</option>";
       let dom = new DOMParser().parseFromString(opt,'text/html');
       let opt_element = dom.body.firstElementChild;
       document.getElementById('courses').append(opt_element);
