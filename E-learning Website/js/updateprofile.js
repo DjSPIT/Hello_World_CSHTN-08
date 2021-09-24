@@ -23,7 +23,6 @@ firebase.auth().onAuthStateChanged((user) => {
         rtdb = firebase.database();
         auth = firebase.auth();
         storage = firebase.storage();
-        showHiddenNav();
     } else {
         // User is signed out
         // ...
