@@ -71,7 +71,7 @@ async function loadTopics() {
 async function loadContent() {
   courseIDforMod = document.getElementById("courseIdMod").value;
   subtopicIDforMOD = document.getElementById("subtopicMod").value;
-  rtdb.ref("/courseData/" + courseIDforMod + "/courseContent/" + subtopicIDforMOD).once('value',(snap)=>{
+  rtdb.ref("courseData/" + courseIDforMod + "/courseContent/" + subtopicIDforMOD).once('value',(snap)=>{
     let mydata = snap.val();
     document.getElementById("contentMod").innerHTML = mydata.content;
   })
