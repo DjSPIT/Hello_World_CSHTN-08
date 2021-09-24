@@ -54,7 +54,7 @@ async function loadTopics() {
         console.log("Document data:", doc.data());
         let dat = doc.data();
         dat.articlesIDs.forEach((element,i) => {
-          const opt = "<option name=\"" + dat.articleTitles[i] + "\" value\"" + element + "\">" + dat.articleTitles[i] + "</option>";
+          const opt = "<option name=\"" + dat.articleTitles[i] + "\" value=\"" + element + "\">" + dat.articleTitles[i] + "</option>";
           let dom = new DOMParser().parseFromString(opt,'text/html');
           let opt_element = dom.body.firstElementChild;
           document.getElementById('subtopics').append(opt_element);
