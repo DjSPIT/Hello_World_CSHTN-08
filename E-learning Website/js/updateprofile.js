@@ -31,11 +31,9 @@ firebase.auth().onAuthStateChanged((user) => {
         location.href = "login.html";
     }
 });
-
 /* -------------------------------------------------------------------------- */
 
 /* ----------------------------display User Details-------------------------- */
-
 async function displayDetails() {
     document.getElementById("profilename").value = auth.currentUser.displayName;
     document.getElementById("loginId").innerHTML = auth.currentUser.email;
