@@ -37,7 +37,7 @@ async function updateDetails() {
     let pname = document.getElementById("profname").value;
     let pabout = document.getElementById("profabout").value;
     db.collection(users).doc(auth.currentUser.uid).update({
-        name:pname;
-        about:pabout;
-    })
+        name:pname,
+        about:pabout,
+    });
 }
