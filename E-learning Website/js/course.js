@@ -85,7 +85,7 @@ async function loadCourseData(theUID) {
           console.log("Document data:", doc.data());
           let dat = doc.data();
           dat.articlesIDs.forEach((element,i) => {
-            const opt = "<a class=\"active\" onclick=\"loadArticle(" + element+ "," + theUID + ")\">" + dat.articleTitles[i] + "</a>"
+            const opt = "<a class=\"active\" onclick=\"loadArticle(" + element+ "," + theUID + "); return false;\">" + dat.articleTitles[i] + "</a>"
             let dom = new DOMParser().parseFromString(opt,'text/html');
             let opt_element = dom.body.firstElementChild;
             document.getElementById('theSidebar').append(opt_element);
@@ -99,7 +99,7 @@ async function loadCourseData(theUID) {
     });
   }
 
-async function loadArticle(articleid,courseid) {
+async function loadArticle(articleid , courseid) {
   let contentRef = rtdb.ref("courseData/" + courseid + "/courseContent/" + articleid)
   contentRef.once("value", (snap)=>{
     let dat = snap.val();
