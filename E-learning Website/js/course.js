@@ -64,7 +64,47 @@ async function logMeOut() {
 
 
 
-/* --------------------------------Load Course------------------------------- */
-let paramString = urlString.split('?')[1];
-let queryString = new URLSearchParams(paramString);
+/* ---------------------------Load Course or quiz---------------------------- */
+
+async function getParams() {
+  const urlParams = new URLSearchParams(window.location.search);
+  if(urlParams.get('type')=="cont"){
+    loadCourseData(urlParams.get('uid'));
+  }
+  else {
+    loadQuiz(urlParams.get('uid'));
+  }
+}
+
+async function loadCourseData(theUID) {
+  document.getElementById("theSidebar").innerHTML = "";
+  let courseID = theUID;
+  let contentList = db.collection("courses").doc(courseID).collection("content").doc("contentLinks");
+  contentList.get().then((doc) => {
+      if (doc.exists) {
+          console.log("Document data:", doc.data());
+          let dat = doc.data();
+          dat.articlesIDs.forEach((element,i) => {
+            const opt = "<a class=\"active\" onclick=\"loadArticle(" + element+ "," + theUID + ")\">" + dat.articleTitles[i] + "</a>"
+            let dom = new DOMParser().parseFromString(opt,'text/html');
+            let opt_element = dom.body.firstElementChild;
+            document.getElementById('subtopics').append(opt_element);
+          });
+      } else {
+          // doc.data() will be undefined in this case
+          console.log("No such document!");
+      }
+    }).catch((error) => {
+      console.log("Error getting document:", error);
+    });
+  }
+
+async function loadArticle(articleid,courseid) {
+  let contentRef = rtdb.ref("courseData/" + courseid + "/courseContent/" + articleid)
+  contentRef.once("value", (snap)=>{
+    let dat = snap.val();
+    document.getElementById("ourContent").innerHTML = "<h4>" + dat.title + "</h4>" + dat.content;
+  })
+}
+
 /* -------------------------------------------------------------------------- */
