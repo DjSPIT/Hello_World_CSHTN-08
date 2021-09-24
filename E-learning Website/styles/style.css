@@ -380,10 +380,17 @@ div.materials{
 .card-deck{
 	margin: 2rem 2rem;
 }
+.card-deck .card{
+	
+  margin-bottom:2rem;
+}
 
 .card{
+	max-width:30% ;
+  min-width:30% ;
 	box-shadow: 0px 3px 65px 0px rgba(0,0,0,0.15);
-  	border-radius:2rem;
+  border-radius:2rem;
+
 }
 .card img{
 	width: 100%;
