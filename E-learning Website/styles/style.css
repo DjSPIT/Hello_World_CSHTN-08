@@ -108,13 +108,17 @@ footer{
 
 /* Footer  */
 .footer {
-  position: relative;
+  position: unset;
   left: 0;
   bottom: 0;
   width: 100%;
   background-color: red;
   color: white;
   text-align: center;
+}
+
+.footer .icons{
+	margin-left:12.5rem;
 }
 
 
@@ -263,7 +267,7 @@ input{
   background-color: #f1f1f1;
   position: fixed;
   height: 100%;
-  overflow: auto;
+  overflow-y: scroll;
   margin: -4rem 0;
 }
 

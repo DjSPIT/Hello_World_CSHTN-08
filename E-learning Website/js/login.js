@@ -21,6 +21,7 @@ firebase.auth().onAuthStateChanged((user) => {
 
 async function logMeIn() {
   console.log("started");
+
   let usern = document.getElementById("usern").value.toString();
   let passwd = document.getElementById("passwd").value.toString(); 
   console.log("1");
