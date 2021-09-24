@@ -35,7 +35,7 @@ firebase.auth().onAuthStateChanged((user) => {
 
 /* ----------------------------display User Details-------------------------- */
 async function displayDetails() {
-    document.getElementById("profilename").value = auth.currentUser.displayName;
+    document.getElementById("profilename").innerHTML = auth.currentUser.displayName;
     document.getElementById("loginId").innerHTML = auth.currentUser.email;
     db.collection("users").doc(auth.currentUser.uid).get().then((doc)=>{
       if (doc.exists) {
