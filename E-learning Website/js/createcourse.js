@@ -206,7 +206,7 @@ async function createQuiz() {
     question: quizQuestion,
     options: [quizOP1, quizOP2, quizOP3, quizOP4]
   }).then(()=>{
-    db.collection("courses").doc(quizCourseID).collection("quizes").doc(quizID).update({
+    db.collection("courses").doc(quizCourseID).collection("quizes").doc(quizID).set({
       quizUID: quizID,
       answer: quizAns
     }).then(()=>{
