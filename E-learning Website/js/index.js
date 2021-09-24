@@ -66,8 +66,7 @@ async function loadCourses(){
   firebase.database().ref("courses/").once('value',(snapshot)=>{
   snapshot.forEach((childSnapshot)=>{
     let data = childSnapshot.val();
-
-    const courseCard = "<div style=\"max-width:30%;min-width:30%;margin-bottom:2rem\" class=\"card\"><img src=\"" + data.image + "\" class=\"card-img-top\"><div class=\"card-body\"><h5 class=\"card-title\">" + data.name + "</h5><p class=\"card-text\">"+ data.description +"</p><button type=\"button\" class=\"btn btn-light\"><a href=\"" + + "\">Enroll Now</a></button></div></div>"
+    const el = "<a class=\"dropdown-item\" href="../pages/course.html#intro">HTML</a>"
     let dom = new DOMParser().parseFromString(courseCard,'text/html');
     let card_element = dom.body.firstElementChild;
     document.getElementById('cards-three').append(card_element);
@@ -77,6 +76,8 @@ async function loadCourses(){
 }
 
 /* -------------------------------------------------------------------------- */
+
+
 
 /* __________________________________________________________________________ */
 /* __________________________________________________________________________ */
