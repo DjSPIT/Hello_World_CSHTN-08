@@ -57,7 +57,7 @@ async function loadTopics() {
           const opt = "<option name=\"" + element + "\" value\"" + element + "\">" + dat.articleTitles[i] + "</option>";
           let dom = new DOMParser().parseFromString(opt,'text/html');
           let opt_element = dom.body.firstElementChild;
-          document.getElementById('courses').append(opt_element);
+          document.getElementById('subtopics').append(opt_element);
         });
     } else {
         // doc.data() will be undefined in this case
