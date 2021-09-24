@@ -83,9 +83,11 @@ async function loadContent() {
 async function modifyContent() {
   courseIDforMod = document.getElementById("courseIdMod").value;
   subtopicIDforMOD = document.getElementById("subtopicMod").value;
-  // rtdb.ref("courseData/" + courseIDforMod + "/courseContent/" + subtopicIDforMOD).update({
-  //
-  // });
+  rtdb.ref("courseData/" + courseIDforMod + "/courseContent/" + subtopicIDforMOD).update({
+    content: document.getElementById("contentMod").value,
+  }).then(()=>{
+    location.reload();
+  })
 }
 /* -------------------------------------------------------------------------- */
 
@@ -103,6 +105,16 @@ async function createContent() {
     title: contentTitle,
     content: mainContent,
     contentUID: contentID,
+    link1:{ url: document.getElementById("link1new").value, votes:0},
+    link2:{ url: document.getElementById("link2new").value, votes:0},
+    link3:{ url: document.getElementById("link3new").value, votes:0},
+    link4:{ url: document.getElementById("link4new").value, votes:0},
+    link5:{ url: document.getElementById("link5new").value, votes:0},
+    link6:{ url: document.getElementById("link6new").value, votes:0},
+    link7:{ url: document.getElementById("link7new").value, votes:0},
+    link8:{ url: document.getElementById("link8new").value, votes:0},
+    link9:{ url: document.getElementById("link9new").value, votes:0},
+    link10:{ url: document.getElementById("link10new").value, votes:0},
   }).then(()=>{
     db.collection("courses").doc(courseID).collection("content").doc("contentLinks").update({
       articlesIDs: firebase.firestore.FieldValue.arrayUnion(contentID),
@@ -182,6 +194,39 @@ async function createCourse() {
 }
 /* -------------------------------------------------------------------------- */
 
+/* --------------------------Creating a new Quiz--------------------------- */
+async function createQuiz() {
+  let quizCourseID = document.getElementById("quizCourseID").value;
+  let quizQuestion = document.getElementById("quizQuestion").value;
+  let quizOP1 = document.getElementById("quizOP1").value;
+  let quizOP2 = document.getElementById("quizOP2").value;
+  let quizOP3 = document.getElementById("quizOP3").value;
+  let quizOP4 = document.getElementById("quizOP4").value;
+  let quizAns = document.getElementById("quizAnswer").value;
+
+  if(quizQuestion == "" || quizOP1 == "" || quizOP2 == "" || quizAns == ""){
+    return window.alert("Empty question or first option or second option");
+  }
+
+  let quizRef = rtdb.ref("courseData/" + quizCourseID + "/courseQuiz").push();
+  let quizID = quizRef.key;
+
+  quizRef.set({
+    quizUID: quizID,
+    question: quizQuestion,
+    options: [quizOP1, quizOP2, quizOP3, quizOP4]
+  }).then(()=>{
+    db.collection("courses").doc(quizCourseID).collection("quizes").doc(quizID).set({
+      quizUID: quizID,
+      answer: quizAns
+    }).then(()=>{
+      location.reload();
+    })
+  });
+
+}
+
+/* -------------------------------------------------------------------------- */
 
 /* __________________________________________________________________________ */
 /* __________________________________________________________________________ */

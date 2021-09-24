@@ -114,6 +114,47 @@
       <td>Content</td>
       <td> <textarea id="contentMod" name="name" rows="15" cols="80" autocomplete="off"></textarea> </td>
     </tr>
+    <!-- Links -->
+    <tr>
+      <td>Link 1</td>
+      <td> <input id="link1mod" type="text" name="link1mod" autocomplete="off" placeholder="Insert A Link...."> </td>
+    </tr>
+    <tr>
+      <td>Link 2</td>
+      <td> <input id="link2mod" type="text" name="link2mod" autocomplete="off" placeholder="Insert A Link...."> </td>
+    </tr>
+    <tr>
+      <td>Link 3</td>
+      <td> <input id="link3mod" type="text" name="link3mod" autocomplete="off" placeholder="Insert A Link...."> </td>
+    </tr>
+    <tr>
+      <td>Link 4</td>
+      <td> <input id="link4mod" type="text" name="link4mod" autocomplete="off" placeholder="Insert A Link...."> </td>
+    </tr>
+    <tr>
+      <td>Link 5</td>
+      <td> <input id="link5mod" type="text" name="link5mod" autocomplete="off" placeholder="Insert A Link...."> </td>
+    </tr>
+    <tr>
+      <td>Link 6</td>
+      <td> <input id="link6mod" type="text" name="link6mod" autocomplete="off" placeholder="Insert A Link...."> </td>
+    </tr>
+    <tr>
+      <td>Link 7</td>
+      <td> <input id="link7mod" type="text" name="link7mod" autocomplete="off" placeholder="Insert A Link...."> </td>
+    </tr>
+    <tr>
+      <td>Link 8</td>
+      <td> <input id="link8mod" type="text" name="link8mod" autocomplete="off" placeholder="Insert A Link...."> </td>
+    </tr>
+    <tr>
+      <td>Link 9</td>
+      <td> <input id="link9mod" type="text" name="link9mod" autocomplete="off" placeholder="Insert A Link...."> </td>
+    </tr>
+    <tr>
+      <td>Link 10</td>
+      <td> <input id="link10mod" type="text" name="link10mod" autocomplete="off" placeholder="Insert A Link...."> </td>
+    </tr>
     <tr>
       <td> <button type="button" name="button" onclick="modifyContent()">Modify Content</button> </td>
     </tr>
@@ -136,10 +177,50 @@
       <tr>
         <td>Content</td>
         <td>
-          <textarea id="newContent" name="name" rows="15" cols="80" autocomplete="off">
-            Remove me for entering new content
+          <textarea id="newContent" name="name" rows="15" cols="80" autocomplete="off" placeholder="Please enter your content here with proper HTML formating">
           </textarea>
         </td>
+      </tr>
+      <!-- Links -->
+      <tr>
+        <td>Link 1</td>
+        <td> <input id="link1new" type="text" name="link1new" autocomplete="off" placeholder="Insert A Link...."> </td>
+      </tr>
+      <tr>
+        <td>Link 2</td>
+        <td> <input id="link2new" type="text" name="link2new" autocomplete="off" placeholder="Insert A Link...."> </td>
+      </tr>
+      <tr>
+        <td>Link 3</td>
+        <td> <input id="link3new" type="text" name="link3new" autocomplete="off" placeholder="Insert A Link...."> </td>
+      </tr>
+      <tr>
+        <td>Link 4</td>
+        <td> <input id="link4new" type="text" name="link4new" autocomplete="off" placeholder="Insert A Link...."> </td>
+      </tr>
+      <tr>
+        <td>Link 5</td>
+        <td> <input id="link5new" type="text" name="link5new" autocomplete="off" placeholder="Insert A Link...."> </td>
+      </tr>
+      <tr>
+        <td>Link 6</td>
+        <td> <input id="link6new" type="text" name="link6new" autocomplete="off" placeholder="Insert A Link...."> </td>
+      </tr>
+      <tr>
+        <td>Link 7</td>
+        <td> <input id="link7new" type="text" name="link7new" autocomplete="off" placeholder="Insert A Link...."> </td>
+      </tr>
+      <tr>
+        <td>Link 8</td>
+        <td> <input id="link8new" type="text" name="link8new" autocomplete="off" placeholder="Insert A Link...."> </td>
+      </tr>
+      <tr>
+        <td>Link 9</td>
+        <td> <input id="link9new" type="text" name="link9new" autocomplete="off" placeholder="Insert A Link...."> </td>
+      </tr>
+      <tr>
+        <td>Link 10</td>
+        <td> <input id="link10new" type="text" name="link10new" autocomplete="off" placeholder="Insert A Link...."> </td>
       </tr>
       <tr>
         <td> <button type="button" name="button" onclick="createContent()"> Create Content </button> </td>
@@ -163,8 +244,7 @@
       <tr>
         <td>A Brief Description</td>
         <td>
-          <textarea id="briefDesc" name="name" rows="15" cols="80" autocomplete="off">
-            Remove me before writing a brief description.
+          <textarea id="briefDesc" name="name" rows="15" cols="80" autocomplete="off" placeholder="Please enter your content here with proper HTML formating">
           </textarea>
         </td>
       </tr>
@@ -173,6 +253,46 @@
       </tr>
       <tr>
         <td> <button type="button" name="button" onclick="createCourse()"> Create Topic </button> </td>
+      </tr>
+    </table>
+    <br>
+    <br>
+    <hr>
+    <br>
+
+    <!--Create a new Quiz-->
+    <h4>Create A New Quiz</h4>
+    <table>
+      <tr>
+        <td>Course Name</td>
+        <td> <input id="quizCourseID" placeholder="Enter Course Name" list="courses" autocomplete="off"> </td>
+      </tr>
+      <tr>
+        <td>Question</td>
+        <td> <input id="quizQuestion" type="text" name="question" placeholder="Enter the Question......." autocomplete="off"> </td>
+      </tr>
+      <tr>
+        <td>Option 1</td>
+        <td> <input id="quizOP1" type="text" name="quizOP1" placeholder="Insert an Option........." autocomplete="off"> </td>
+      </tr>
+      <tr>
+        <td>Option 2</td>
+        <td> <input id="quizOP2" type="text" name="quizOP2" placeholder="Insert an Option........." autocomplete="off"> </td>
+      </tr>
+      <tr>
+        <td>Option 3</td>
+        <td> <input id="quizOP3" type="text" name="quizOP3" placeholder="Insert an Option........." autocomplete="off"> </td>
+      </tr>
+      <tr>
+        <td>Option 4</td>
+        <td> <input id="quizOP4" type="text" name="quizOP4" placeholder="Insert an Option........." autocomplete="off"> </td>
+      </tr>
+      <tr>
+        <td>Answer</td>
+        <td> <input id="quizAnswer" type="text" name="quizAnswer" placeholder="Copy Paste the correct Answer" autocomplete="off"> </td>
+      </tr>
+      <tr>
+        <td> <button type="button" name="button" onclick="createQuiz()"> Create Quiz </button> </td>
       </tr>
     </table>
     <br>
