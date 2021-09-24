@@ -57,7 +57,7 @@ async function updateDetails() {
     auth.updateProfile({
       displayName: pname,
     }).then(()=>{
-      db.collection(users).doc(auth.currentUser.uid).update({
+      db.collection("users").doc(auth.currentUser.uid).update({
           name:pname,
           about:pabout,
       }).then(()=>{
