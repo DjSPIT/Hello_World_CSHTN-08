@@ -34,6 +34,11 @@
 
   <!-- Page Title  -->
   <title>Hello_World Platform</title>
+  <style media="screen">
+    table.td{
+      min-height: 50px,
+    }
+  </style>
 </head>
 
 <body>
@@ -60,36 +65,41 @@
 
   </datalist>
 
+  <datalist id="subtopics">
+
+  </datalist>
+
   <!-- Modifying Course Content -->
   <h4>Modifying Course Content</h4>
-  <table>
+  <table style="">
     <tr>
       <td>Course Name</td>
       <td> <input id="courseIdMod" name="courseIdMod" list="courses" placeholder="Enter the Course Name" autocomplete="off"> </td>
-      <td> <button type="button" name="button" onclick=""></button> </td>
+      <td> <button type="button" name="button" onclick="loadTopics()">Load Topics</button> </td>
     </tr>
     <tr>
       <td>SubTopic Name</td>
       <td> <input id="subtopicMod" name="subtopicMod" list="subtopics" placeholder="Enter the Subtopic Name" autocomplete="off"></td>
-      <td> <button type="button" name="button" onclick=""></button> </td>
+      <td> <button type="button" name="button" onclick="loadContent">Load Content</button> </td>
     </tr>
     <tr>
       <td>Content</td>
-      <td> <textarea id="contentMod" name="name" rows="15" cols="80"></textarea> </td>
+      <td> <textarea id="contentMod" name="name" rows="15" cols="80" autocomplete="off"></textarea> </td>
     </tr>
     <tr>
-      <td> <button type="button" name="button" onclick=""></button> </td>
+      <td> <button type="button" name="button" onclick="modifyContent()">Modify Content</button> </td>
     </tr>
   </table>
   <br>
+  <hr>
   <br>
 
   <!-- Creating new Course Content -->
   <h4>Creating New Course Content</h4>
-    <table>
+    <table style="borders: 2px solid black">
       <tr>
         <td>Course ID</td>
-        <td> <input id="courseId" name="courseId" list="courses" autocomplete="off"> </td>
+        <td> <input id="courseID" placeholder="Enter Course Name" name="courseId" list="courses" autocomplete="off"> </td>
       </tr>
       <tr>
         <td>Title</td>
@@ -99,18 +109,24 @@
         <td>Content</td>
         <td>
           <textarea id="newContent" name="name" rows="15" cols="80">
-            Remove me fefor entering new content
+            Remove me for entering new content
           </textarea>
         </td>
       </tr>
+      <tr>
+        <td> <button type="button" name="button" onclick="createContent()"> Create Content </button> </td>
+      </tr>
     </table>
+    <br>
+    <hr>
+    <br>
 
     <!--Create a new course-->
     <h4>Create A New Course</h4>
     <table>
       <tr>
         <td>Course Name</td>
-        <td> <input id="newCourseName" list="courses" placeholder="Enter Course Name" autocomplete="off"> </td>
+        <td> <input id="newCourseName" placeholder="Enter Course Name" autocomplete="off"> </td>
       </tr>
       <tr>
         <td>Author</td>
@@ -128,7 +144,7 @@
         <td> <input id="fileB" type="file" name="pic" onchange="uploadPic" autocomplete="off" accept="image/*"> </td>
       </tr>
       <tr>
-        <td> <button type="button" name="button" onclick="createCourse()"> Create </button> </td>
+        <td> <button type="button" name="button" onclick="createCourse()"> Create Topic </button> </td>
       </tr>
     </table>
     <br>
