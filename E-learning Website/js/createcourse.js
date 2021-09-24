@@ -85,7 +85,9 @@ async function modifyContent() {
   subtopicIDforMOD = document.getElementById("subtopicMod").value;
   rtdb.ref("courseData/" + courseIDforMod + "/courseContent/" + subtopicIDforMOD).update({
     content: document.getElementById("contentMod").value,
-  });
+  }).then(()=>{
+    location.reload();
+  })
 }
 /* -------------------------------------------------------------------------- */
 
