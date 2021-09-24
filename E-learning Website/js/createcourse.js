@@ -32,19 +32,22 @@ firebase.auth().onAuthStateChanged((user) => {
 });
 /* -------------------------------------------------------------------------- */
 
-/* ------------------------Loading Available Courses-------------------------- */
+/* -----------------------Loading Available Courses-------------------------- */
 
 async function loadCourses() {
   rtdb.ref("/courses").once('value',(snap)=>{
     snap.forEach((childSnap) => {
       let dat = childSnap.val();
-      const opt = "<option name=\"" + dat.name + "\" value\"" + dat.courseID + "\">"
+      const opt = "<option name=\""+ dat.name + "\" value=\"" + dat.courseUID + "\">" + dat.name + "</option>";
       let dom = new DOMParser().parseFromString(opt,'text/html');
       let opt_element = dom.body.firstElementChild;
       document.getElementById('courses').append(opt_element);
     });
   });
 }
+/* -------------------------------------------------------------------------- */
+
+/* ----------------------Modifying Available Courses------------------------- */
 
 async function loadTopics() {
   let courseID = document.getElementById("courseIdMod").value.toString();
@@ -54,10 +57,10 @@ async function loadTopics() {
         console.log("Document data:", doc.data());
         let dat = doc.data();
         dat.articlesIDs.forEach((element,i) => {
-          const opt = "<option name=\"" + dat.articleTitles[i] + "\" value\"" + element + "\">"
+          const opt = "<option name=\"" + dat.articleTitles[i] + "\" value=\"" + element + "\">" + dat.articleTitles[i] + "</option>";
           let dom = new DOMParser().parseFromString(opt,'text/html');
           let opt_element = dom.body.firstElementChild;
-          document.getElementById('courses').append(opt_element);
+          document.getElementById('subtopics').append(opt_element);
         });
     } else {
         // doc.data() will be undefined in this case
@@ -69,7 +72,20 @@ async function loadTopics() {
 }
 
 async function loadContent() {
+  courseIDforMod = document.getElementById("courseIdMod").value;
+  subtopicIDforMOD = document.getElementById("subtopicMod").value;
+  rtdb.ref("courseData/" + courseIDforMod + "/courseContent/" + subtopicIDforMOD).once('value',(snap)=>{
+    let mydata = snap.val();
+    document.getElementById("contentMod").innerHTML = mydata.content;
+  })
+}
 
+async function modifyContent() {
+  courseIDforMod = document.getElementById("courseIdMod").value;
+  subtopicIDforMOD = document.getElementById("subtopicMod").value;
+  // rtdb.ref("courseData/" + courseIDforMod + "/courseContent/" + subtopicIDforMOD).update({
+  //
+  // });
 }
 /* -------------------------------------------------------------------------- */
 
