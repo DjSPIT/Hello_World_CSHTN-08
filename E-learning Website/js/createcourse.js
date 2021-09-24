@@ -59,9 +59,6 @@ async function createCourse() {
   let courseRef = rtdb.ref("courseData").push();
   let courseID = courseRef.key;
 
-  const textToBLOB = new Blob([courseDesc], { type: 'text/html' });
-  const sFileName = courseID + '.html';
-
   const descRef = storage.ref(courseID + "/metadata/" + "description.html");
 
   var descURL, picURL;
