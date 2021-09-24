@@ -26,10 +26,23 @@ firebase.auth().onAuthStateChanged((user) => {
     } else {
         // User is signed out
         // ...
-        //location.href = "index.html";
+        location.href = "login.html";
     }
 });
 
+/* -------------------------------------------------------------------------- */
+
+/* ----------------------------display User Details-------------------------- */
+
+async function displayDetails() {
+    document.getElementById("profilename").value = auth.currentUser.displayName;
+    document.getElementById("loginId").innerHTML = auth.currentUser.email;
+    db.collection(users).doc(auth.currentUser.uid).get().then(())
+}
+
+/* -------------------------------------------------------------------------- */
+
+/* ----------------------------Update User Details--------------------------- */
 
 async function updateDetails() {
 
@@ -40,3 +53,5 @@ async function updateDetails() {
         about:pabout,
     });
 }
+
+/* -------------------------------------------------------------------------- */

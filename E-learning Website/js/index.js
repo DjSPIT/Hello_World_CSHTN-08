@@ -38,13 +38,13 @@ async function showHiddenNav() {
   document.getElementById("toLogout").innerHTML = "Logout";
   document.getElementById("toLogout").href = "";
   document.getElementById("toLogout").style.color = "#FF0000";
-  document.getElementById("toLogout").onclick = "logMeOut";
+  document.getElementById("toLogout").onclick = "logMeOut(); return false;";
   //document.getElementById("toLogout").addEventListener("click", logMeOut);
 }
 
 /* -------------------------------------------------------------------------- */
 
-/* -----------------------------Change Nav Bar------------------------------- */
+/* --------------------------------Logging Out------------------------------- */
 
 async function logMeOut() {
   console.log("logging out");
