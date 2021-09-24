@@ -23,6 +23,7 @@ firebase.auth().onAuthStateChanged((user) => {
         rtdb = firebase.database();
         auth = firebase.auth();
         storage = firebase.storage();
+        displayDetails();
     } else {
         // User is signed out
         // ...
@@ -37,7 +38,12 @@ firebase.auth().onAuthStateChanged((user) => {
 async function displayDetails() {
     document.getElementById("profilename").value = auth.currentUser.displayName;
     document.getElementById("loginId").innerHTML = auth.currentUser.email;
-    db.collection(users).doc(auth.currentUser.uid).get().then(())
+    db.collection(users).doc(auth.currentUser.uid).get().then((doc)=>{
+      if (doc.exists) {
+        let dat = doc.data();
+        document.getElementById("aboutMe").innerHTML = dat.about;
+      }
+    });
 }
 
 /* -------------------------------------------------------------------------- */
@@ -45,12 +51,17 @@ async function displayDetails() {
 /* ----------------------------Update User Details--------------------------- */
 
 async function updateDetails() {
-
     let pname = document.getElementById("profname").value;
     let pabout = document.getElementById("profabout").value;
-    db.collection(users).doc(auth.currentUser.uid).update({
-        name:pname,
-        about:pabout,
+    auth.updateProfile({
+      displayName: pname,
+    }).then(()=>{
+      db.collection(users).doc(auth.currentUser.uid).update({
+          name:pname,
+          about:pabout,
+      }).then(()=>{
+        location.reload();
+      })
     });
 }
 
