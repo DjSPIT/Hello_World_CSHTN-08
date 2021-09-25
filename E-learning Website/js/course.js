@@ -75,6 +75,7 @@ async function getParams() {
   }
   else {
     if(urlParams.get('type')=="cont"){
+      courseIDOn = urlParams.get('uid');
       loadCourseData(urlParams.get('uid'));
     }
     else {
@@ -84,7 +85,6 @@ async function getParams() {
 }
 
 async function loadCourseData(theUID) {
-  courseIDOn = theUID;
   document.getElementById("theSidebar").innerHTML = "";
   let courseID = theUID;
   let contentList = db.collection("courses").doc(courseID).collection("content").doc("contentLinks");
@@ -108,7 +108,7 @@ async function loadCourseData(theUID) {
   }
 
 async function loadArticle(articleid) {
-  let contentRef = rtdb.ref("courseData/" + courseIdOn + "/courseContent/" + articleid);
+  let contentRef = rtdb.ref("courseData/" + courseIDOn + "/courseContent/" + articleid);
   contentRef.once("value", (snap)=>{
     let dat = snap.val();
     document.getElementById("ourContent").innerHTML = "<h4>" + dat.title + "</h4><pre>" + dat.content + "</pre>";
