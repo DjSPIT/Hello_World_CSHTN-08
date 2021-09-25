@@ -8,6 +8,7 @@ var rtdb;
 var auth;
 var profileRef;
 var courseIDOn;
+var global_articleID;
 
 /* -------------------------------Functions---------------------------------- */
 
@@ -121,6 +122,6 @@ async function loadArticle(articleid) {
 }
 
 async function loadQuiz() {
-  
+
 }
 /* -------------------------------------------------------------------------- */
