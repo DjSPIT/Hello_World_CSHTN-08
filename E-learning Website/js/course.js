@@ -106,6 +106,8 @@ async function loadCourseData(theUID) {
           // doc.data() will be undefined in this case
           console.log("No such document!");
       }
+    }).then(()=>{
+      rtdb.ref("courseData")
     }).catch((error) => {
       console.log("Error getting document:", error);
     });
@@ -117,7 +119,7 @@ async function loadArticle(articleid) {
   let contentRef = rtdb.ref("courseData/" + courseIDOn.toString() + "/courseContent/" + articleid.toString());
   contentRef.once("value", (snap)=>{
     let articleData = snap.val();
-    document.getElementById("ourContent").innerHTML = "<h4>" + articleData.title + "</h4><pre>" + articleData.content + "</pre>";
+    document.getElementById("ourContent").innerHTML = "<h4>" + articleData.title + "</h4>" + articleData.content + " ";
   });
 }
 
