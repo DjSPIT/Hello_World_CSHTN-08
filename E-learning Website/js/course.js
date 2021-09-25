@@ -71,6 +71,7 @@ async function logMeOut() {
 async function getParams() {
   const urlParams = new URLSearchParams(window.location.search);
   if(urlParams.get('articleID')){
+    courseIDOn = urlParams.get('uid');
     loadCourseData(urlParams.get('uid')).then(()=>{
       loadArticle(urlParams.get('articleID'));
     })
