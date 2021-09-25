@@ -108,6 +108,8 @@ async function loadCourseData(theUID) {
   }
 
 async function loadArticle(articleid) {
+  console.log(courseIDOn.toString());
+  console.log(articleid.toString());
   let contentRef = rtdb.ref("courseData/" + courseIDOn.toString() + "/courseContent/" + articleid.toString());
   contentRef.once("value", (snap)=>{
     let articleData = snap.val();
