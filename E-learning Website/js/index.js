@@ -65,15 +65,15 @@ async function logMeOut() {
 async function loadCourses(){
   document.getElementById('dropdownmenu').innerHTML = "";
   firebase.database().ref("courses/").once('value',(snapshot)=>{
-  snapshot.forEach((childSnapshot)=>{
-    let data = childSnapshot.val();
-    const el = "<a class=\"dropdown-item\" href=\"../pages/course.html?type=cont&uid=" + data.courseUID +"\">" + data.name + "</a>";
-    let dom = new DOMParser().parseFromString(el,'text/html');
-    let card_element = dom.body.firstElementChild;
-    document.getElementById('dropdownmenu').append(card_element);
-    //card_element.style.display = 'block';
+    snapshot.forEach((childSnapshot)=>{
+      let data = childSnapshot.val();
+      const el = "<a class=\"dropdown-item\" href=\"../pages/course.html?type=cont&uid=" + data.courseUID +"\">" + data.name + "</a>";
+      let dom = new DOMParser().parseFromString(el,'text/html');
+      let card_element = dom.body.firstElementChild;
+      document.getElementById('dropdownmenu').append(card_element);
+      //card_element.style.display = 'block';
+    });
   });
-});
 }
 
 /* -------------------------------------------------------------------------- */
