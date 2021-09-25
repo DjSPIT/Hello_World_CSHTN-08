@@ -104,16 +104,18 @@ async function createContent() {
     title: contentTitle,
     content: mainContent,
     contentUID: contentID,
-    link1:{ url: document.getElementById("link1new").value, votes:0},
-    link2:{ url: document.getElementById("link2new").value, votes:0},
-    link3:{ url: document.getElementById("link3new").value, votes:0},
-    link4:{ url: document.getElementById("link4new").value, votes:0},
-    link5:{ url: document.getElementById("link5new").value, votes:0},
-    link6:{ url: document.getElementById("link6new").value, votes:0},
-    link7:{ url: document.getElementById("link7new").value, votes:0},
-    link8:{ url: document.getElementById("link8new").value, votes:0},
-    link9:{ url: document.getElementById("link9new").value, votes:0},
-    link10:{ url: document.getElementById("link10new").value, votes:0},
+    privateRepo:{
+      link1:{ url: document.getElementById("link1new").value, votes:0},
+      link2:{ url: document.getElementById("link2new").value, votes:0},
+      link3:{ url: document.getElementById("link3new").value, votes:0},
+      link4:{ url: document.getElementById("link4new").value, votes:0},
+      link5:{ url: document.getElementById("link5new").value, votes:0},
+      link6:{ url: document.getElementById("link6new").value, votes:0},
+      link7:{ url: document.getElementById("link7new").value, votes:0},
+      link8:{ url: document.getElementById("link8new").value, votes:0},
+      link9:{ url: document.getElementById("link9new").value, votes:0},
+      link10:{ url: document.getElementById("link10new").value, votes:0},
+    }
   }).then(()=>{
     db.collection("courses").doc(courseID).collection("content").doc("contentLinks").update({
       articlesIDs: firebase.firestore.FieldValue.arrayUnion(contentID),
