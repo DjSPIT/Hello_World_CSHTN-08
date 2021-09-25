@@ -64,50 +64,10 @@ h2{
 /* Main Content */
 
 .main{
-	background-image: url(../img/background.jpg);
-	background-position: center;
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-attachment: fixed;
-	height: 80vh;
+	display: flex;
+	justify-content: space-around;
+	background-color:#443876;
 }
-
-.main-content{
-	padding-top: 18rem;
-	margin-left: 2rem;
-	margin-right: 25rem;
-}
-
-.main-content h2{
-	color: var(--clr-bg-light);
-	font-size: 3rem;
-	font-weight: 700;
-	font-family: var(--ff-primary);
-}
-
-.main-content span{
-	color: var(--clr-bg-light);
-	font-weight: lighter;
-	font-size: 1.2rem;
-
-}
-
-.main .btn{
-	background-color: var(--clr-accent);
-	margin-top: 5rem;
-	margin-left: 45rem;
-}
-
-.main .btn:hover{
-	background-color: var(--clr-accent-dark);
-}
-
-.main .btn a{
-	color: var(--clr-bg-light);
-	font-family: var(--ff-primary);
-	text-decoration: none;
-}
-
 
 /* Footer  */
 .footer {
@@ -386,10 +346,8 @@ td{
 }
 
 .roadmap img{
-	width:78%;
+	width:100%;
 	display: block;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .roadmap-head{
@@ -399,7 +357,7 @@ td{
 
 .box-transparent1 {
 position: absolute;
-top: 40rem !important;
+top: 60rem ;
 left: 10rem;
 background-color: rgba(100, 100, 100, 0.01);
 padding: 20px;
@@ -409,7 +367,7 @@ height: 30rem;
 
 .box-transparent2 {
 position: absolute;
-top: 70rem !important;
+top: 96rem ;
 left: 10rem;
 background-color: rgba(100, 100, 100, 0.01);
 padding: 20px;
@@ -420,8 +378,8 @@ height: 28rem;
 
 .box-transparent3 {
 position: absolute;
-top: 99rem !important;
-left: 10rem;
+top: 131rem ;
+left: 7rem;
 background-color: rgba(100, 100, 100, 0.01);
 padding: 20px;
 width: 75rem;
@@ -430,17 +388,17 @@ height: 24rem;
 
 .box-transparent4 {
 position: absolute;
-top: 124rem;
+top: 162rem;
 left: 10rem;
 background-color: rgba(100, 100, 100, 0.01);
 padding: 20px;
-width: 75rem;
+width: 79rem;
 height: 24rem;
 }
 
 .box-transparent5 {
 position: absolute;
-top: 147rem;
+top: 191rem;
 left: 10rem;
 background-color: rgba(100, 100, 100, 0.01);
 padding: 20px;
@@ -450,10 +408,20 @@ height: 26rem;
 
 .box-transparent6 {
 position: absolute;
-top: 173rem;
+top: 225rem;
 left: 10rem;
 background-color: rgba(100, 100, 100, 0.01);
 padding: 20px;
 width: 75rem;
 height: 28rem;
+}
+
+.get-started-box{
+position: absolute;
+top: 39rem;
+left: 62rem;
+background-color: rgba(100, 100, 100, 0.01);
+padding: 20px;
+width: 20rem;
+height: 4rem;
 }
