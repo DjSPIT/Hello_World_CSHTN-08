@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "E-learning Website",
+    "public": "E-learning Website/",
     "ignore": [
       "firebase.json",
       "**/.*",
@@ -8,7 +8,7 @@
     ],
     "redirects": [
       {
-        "source": "/",
+        "source": "/E-learning Website/pages/index.html",
         "destination": "pages/index.html",
         "type": 301
       }

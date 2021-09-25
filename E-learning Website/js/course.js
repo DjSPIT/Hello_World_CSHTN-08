@@ -7,6 +7,7 @@ var db;
 var rtdb;
 var auth;
 var profileRef;
+var courseIDOn;
 
 /* -------------------------------Functions---------------------------------- */
 
@@ -78,6 +79,7 @@ async function getParams() {
 }
 
 async function loadCourseData(theUID) {
+  courseIDOn = theUID;
   document.getElementById("theSidebar").innerHTML = "";
   let courseID = theUID;
   let contentList = db.collection("courses").doc(courseID).collection("content").doc("contentLinks");
@@ -100,11 +102,11 @@ async function loadCourseData(theUID) {
     });
   }
 
-async function loadArticle(articleid , courseid) {
-  let contentRef = rtdb.ref("courseData/" + courseid + "/courseContent/" + articleid)
+async function loadArticle(articleid) {
+  let contentRef = rtdb.ref("courseData/" + courseIdOn + "/courseContent/" + articleid)
   contentRef.once("value", (snap)=>{
     let dat = snap.val();
-    document.getElementById("ourContent").innerHTML = "<h4>" + dat.title + "</h4>" + dat.content;
+    document.getElementById("ourContent").innerHTML = "<h4>" + dat.title + "</h4><pre>" + dat.content + "</pre>";
   })
 }
 
