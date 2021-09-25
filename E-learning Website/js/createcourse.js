@@ -27,7 +27,7 @@ firebase.auth().onAuthStateChanged((user) => {
     } else {
         // User is signed out
         // ...
-        //location.href = "index.html";
+        location.href = "index.html";
     }
 });
 /* -------------------------------------------------------------------------- */
