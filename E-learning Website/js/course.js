@@ -97,7 +97,7 @@ async function loadCourseData(theUID) {
           console.log("Document data:", doc.data());
           let dat = doc.data();
           dat.articlesIDs.forEach((element,i) => {
-            const opt = "<a class=\"active\" href=\"" + window.location.href + "&articleID=" + element.toString() + "\">" + dat.articleTitles[i] + "</a>"
+            const opt = "<a class=\"active\" onclick=\"redirectArticle(\"" + element.toString() + "\")\">" + dat.articleTitles[i] + "</a>"
             let dom = new DOMParser().parseFromString(opt,'text/html');
             let opt_element = dom.body.firstElementChild;
             document.getElementById('theSidebar').append(opt_element);
@@ -121,6 +121,13 @@ async function loadArticle(articleid) {
     let articleData = snap.val();
     document.getElementById("ourContent").innerHTML = "<h4>" + articleData.title + "</h4>" + articleData.content + " ";
   });
+  contentRef.chi
+}
+
+async function redirectArticle(newArticleID) {
+  let params = location.href.split("articleID=");
+  params[1] = newArticleID.toString();
+  window.location.replace(params.join());
 }
 
 async function loadQuiz() {
