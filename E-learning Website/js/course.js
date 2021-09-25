@@ -88,7 +88,7 @@ async function loadCourseData(theUID) {
           console.log("Document data:", doc.data());
           let dat = doc.data();
           dat.articlesIDs.forEach((element,i) => {
-            const opt = "<a class=\"active\" onclick=\"loadArticle(" + element + ")\">" + dat.articleTitles[i] + "</a>"
+            const opt = "<a class=\"active\" onclick=\"loadArticle(" + element.toString() + ")\">" + dat.articleTitles[i] + "</a>"
             let dom = new DOMParser().parseFromString(opt,'text/html');
             let opt_element = dom.body.firstElementChild;
             document.getElementById('theSidebar').append(opt_element);
