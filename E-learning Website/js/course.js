@@ -74,7 +74,7 @@ async function getParams() {
     courseIDOn = urlParams.get('uid');
     loadCourseData(urlParams.get('uid')).then(()=>{
       loadArticle(urlParams.get('articleID'));
-    })
+    });
   }
   else {
     if(urlParams.get('type')=="cont"){
@@ -120,4 +120,7 @@ async function loadArticle(articleid) {
   });
 }
 
+async function loadQuiz() {
+  
+}
 /* -------------------------------------------------------------------------- */

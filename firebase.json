@@ -8,7 +8,12 @@
     ],
     "redirects": [
       {
-        "source": "/E-learning Website/pages/index.html",
+        "source": "/",
+        "destination": "pages/index.html",
+        "type": 301
+      },
+      {
+        "source": "/",
         "destination": "pages/index.html",
         "type": 301
       }
